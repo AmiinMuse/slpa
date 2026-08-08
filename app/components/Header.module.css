@@ -14,9 +14,14 @@
 }
 
 .brand {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 56px;
+  width: auto;
 }
 
 .nav {

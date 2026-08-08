@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
 
@@ -14,7 +15,14 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link href="/" className={styles.brand}>
-          SLPA
+          <Image
+            src="/logo.png"
+            alt="SLPA"
+            width={246}
+            height={240}
+            className={styles.logo}
+            priority
+          />
         </Link>
         <nav className={styles.nav}>
           {NAV_LINKS.map((link) => (
