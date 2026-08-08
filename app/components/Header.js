@@ -16,10 +16,10 @@ export default function Header() {
       <div className={styles.inner}>
         <Link href="/" className={styles.brand}>
           <Image
-            src="/logo.png"
+            src="/slpa-logo.png"
             alt="SLPA"
-            width={246}
-            height={240}
+            width={1536}
+            height={1024}
             className={styles.logo}
             priority
           />
