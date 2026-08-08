@@ -1,0 +1,61 @@
+.header {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 24px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.navLink:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.donateButton {
+  background: var(--color-accent);
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.donateButton:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 700px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    gap: 16px;
+  }
+}
