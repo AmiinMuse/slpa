@@ -156,12 +156,12 @@ export default function Home() {
             <Link href="/conference" className="btn btn-light">
               Full conference details
             </Link>
-            <a
-              href="https://myslpa.org/2024-atl-recap-%2B-gallery"
+            <Link
+              href="/conference/2024-atlanta"
               className="btn btn-outline-light"
             >
               Recap &amp; gallery
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
