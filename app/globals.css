@@ -199,6 +199,29 @@ footer p.mission{font-size:14px;line-height:1.65;max-width:34ch;color:rgba(35,38
 .slide-nav svg{width:15px;height:15px;}
 @media (prefers-reduced-motion:reduce){.slideshow .stage img{transition:none;}}
 
+.past-conf{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;padding:56px 0;border-top:1px solid var(--line);}
+.past-conf:first-of-type{border-top:none;padding-top:0;}
+.past-conf.flip .past-media{order:-1;}
+.past-conf h3{font-size:24px;margin:12px 0 20px;}
+.past-meta{display:flex;gap:36px;flex-wrap:wrap;margin:0 0 20px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.past-meta div{font-size:13.5px;color:rgba(35,38,31,0.72);}
+.past-meta strong{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(35,38,31,0.45);font-weight:600;margin-bottom:4px;}
+.past-conf p{font-size:15px;line-height:1.65;color:rgba(35,38,31,0.7);margin:0 0 16px;}
+.past-panels{list-style:none;margin:0 0 20px;padding:0;}
+.past-panels li{font-size:13.5px;line-height:1.5;color:rgba(35,38,31,0.68);padding:7px 0 7px 16px;position:relative;}
+.past-panels li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:1.5px;background:var(--olive);}
+.past-conf a.more{font-size:13px;font-weight:600;color:var(--olive);display:inline-flex;align-items:center;gap:6px;}
+.past-conf a.more svg{width:13px;height:13px;transition:transform .2s ease;}
+.past-conf a.more:hover svg{transform:translateX(3px);}
+.past-tile{background:var(--olive-deep);color:var(--paper);padding:56px 40px;text-align:center;}
+.past-tile .big{font-family:var(--font-fraunces),serif;font-size:72px;line-height:1;color:var(--paper);}
+.past-tile .sub{font-size:12px;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.65);font-weight:600;margin-top:14px;}
+.past-tile .theme{font-family:var(--font-fraunces),serif;font-style:italic;font-size:17px;color:rgba(255,255,255,0.85);margin-top:22px;line-height:1.5;}
+@media (max-width:980px){
+  .past-conf{grid-template-columns:1fr;gap:32px;padding:44px 0;}
+  .past-conf.flip .past-media{order:0;}
+}
+
 .gallery-chapter{margin-top:56px;}
 .gallery-chapter:first-of-type{margin-top:0;}
 .gallery-head{max-width:640px;margin-bottom:24px;}
