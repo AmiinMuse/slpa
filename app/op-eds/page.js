@@ -30,6 +30,17 @@ export default function OpEds() {
 
       <section>
         <div className="wrap">
+          <Reveal
+            className="photo-frame"
+            style={{ margin: "0 auto 48px", maxWidth: "560px" }}
+          >
+            <img
+              src="/op-eds/oped-hero.jpg"
+              alt="A crowd of people forming the shape of Somaliland"
+              loading="lazy"
+            />
+            <figcaption>Image credit: Edna Adan Maternity Hospital</figcaption>
+          </Reveal>
           <Reveal className="article">
             <div className="k">Q1 Quarterly Analytical Op-Ed &middot; Economy</div>
             <h3>
@@ -70,6 +81,12 @@ export default function OpEds() {
           </Reveal>
 
           <Reveal className="article">
+            <img
+              src="/op-eds/burco-thumb.jpg"
+              alt="Burao Academy students holding science textbooks"
+              className="article-thumb"
+              loading="lazy"
+            />
             <div className="k">Blog &middot; Community</div>
             <h3>It&rsquo;s the last 10 days of Ramadan!</h3>
             <div className="byline">by Rahma Osman &middot; May 24, 2019</div>
