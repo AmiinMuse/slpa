@@ -33,12 +33,15 @@ export default function Gallery({ chapters }) {
       {chapters.map((chapter) => {
         const base = offset;
         offset += chapter.photos.length;
+        const label = chapter.alt || chapter.title || "SLPA conference photo";
         return (
-          <div className="gallery-chapter" key={chapter.title}>
-            <div className="gallery-head">
-              <h3>{chapter.title}</h3>
-              <p>{chapter.note}</p>
-            </div>
+          <div className="gallery-chapter" key={chapter.title || base}>
+            {(chapter.title || chapter.note) && (
+              <div className="gallery-head">
+                {chapter.title && <h3>{chapter.title}</h3>}
+                {chapter.note && <p>{chapter.note}</p>}
+              </div>
+            )}
             <div className="gallery">
               {chapter.photos.map((photo, i) => (
                 <button
@@ -46,13 +49,13 @@ export default function Gallery({ chapters }) {
                   className="tile"
                   key={photo.src}
                   onClick={() => setOpen(base + i)}
-                  aria-label={`View photo — ${chapter.title}`}
+                  aria-label={`View photo — ${label}`}
                 >
                   <img
                     src={photo.src}
                     width={photo.width}
                     height={photo.height}
-                    alt={`${chapter.title} — SLPA 2024 Atlanta conference`}
+                    alt={label}
                     loading="lazy"
                   />
                 </button>
