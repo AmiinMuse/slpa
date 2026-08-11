@@ -6,11 +6,6 @@ export const metadata = {
 
 const BLOCKS = [
   {
-    t: "img",
-    src: "/op-eds/burco-thumb.jpg",
-    alt: "Burao Academy students holding copies of the book It Takes a School",
-  },
-  {
     t: "p",
     s: "Update 5/31/2019: Alhamdulilah, we've raised $2,500 to date. Help us reach our goal of $5,000 by donating here today.",
   },
@@ -31,11 +26,6 @@ const BLOCKS = [
     s: "Burao Academy believes that Somali lives can be transformed through education. However, achieving this is no easy task but with your financial support, anything is possible!",
   },
   {
-    t: "img",
-    src: "/op-eds/burco-2.jpg",
-    alt: "Burao Academy students learning programming and coding on a laptop",
-  },
-  {
     t: "p",
     s: "Students such as courageous 9-year old Sagal are learning graphic animation as well as other STEM-related skills such as programming and coding at Burao Academy. Sagal's dream of becoming a documentary maker and the dream of all the other bright and gifted young students is Somaliland is in your hands and only possible through your generous donations today.",
   },
@@ -46,11 +36,6 @@ const BLOCKS = [
   },
   { t: "p", s: "With a paying forward mindset, together we can achieve." },
   {
-    t: "img",
-    src: "/op-eds/burco-1.jpg",
-    alt: "The Burao Academy of Science and Technology campus in Burao, Somaliland",
-  },
-  {
     t: "p",
     s: "Burao Academy, is a Somali-American diaspora grassroots effort and an independent, 501(c)(3) non-profit, coeducational, boarding school offering comprehensive education with special focus on Science, Technology, Engineering and Math (STEM). Learn more about Burao Academy here.",
   },
@@ -59,20 +44,35 @@ const BLOCKS = [
     s: "Since it's inauguration three years ago, 40% of the campus construction is completed including 2 girls dormitory, 4 boys dormitory, 26 classrooms/study halls, as well as a dining hall and kitchen to effectively meet the nutrition need of teachers and students which include those from a nearby orphanage.",
   },
   {
+    t: "img",
+    src: "/op-eds/burco-1.jpg",
+    alt: "The Burao Academy of Science and Technology campus in Burao, Somaliland",
+  },
+  {
     t: "p",
     s: "Additionally, to help fulfill the dire need for technical skills & educated citizens in the country, to date, 30 Burao Academy students received CCNA certifications while another 60 students received Cisco Networking Academy IT Essentials certification. The school is able to provide tech and equipment to its students as it receives support from large US corporations such as Microsoft, Cisco, and Starbucks.",
+  },
+  {
+    t: "img",
+    src: "/op-eds/burco-2.jpg",
+    alt: "Burao Academy students learning programming and coding on a laptop",
+  },
+  {
+    t: "p",
+    s: "Increasing food security in Somaliland and land restoration projects are part of Burao Academy's forward looking all-encompassing curriculum. The 22 acre campus produces vegetation in surplus that gets donated to economically disadvantaged women in nearby villages- who in turn sell in the open market to feed their families.",
   },
   {
     t: "img",
     src: "/op-eds/burco-3.jpg",
     alt: "Land restoration and agriculture on the Burao Academy campus",
   },
-  {
-    t: "p",
-    s: "Increasing food security in Somaliland and land restoration projects are part of Burao Academy's forward looking all-encompassing curriculum. The 22 acre campus produces vegetation in surplus that gets donated to economically disadvantaged women in nearby villages- who in turn sell in the open market to feed their families.",
-  },
   { t: "p", s: "Your kind generosity can help the school achieve even more." },
   { t: "p", s: "We thank you for your support! Signed," },
+  {
+    t: "img",
+    src: "/op-eds/burco-4.jpg",
+    alt: "Somaliland Professionals of America (SLPA) logo",
+  },
   {
     t: "img",
     src: "/op-eds/burco-5.jpg",
