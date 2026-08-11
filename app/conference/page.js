@@ -4,7 +4,7 @@ import JoinBand from "../components/JoinBand";
 import ConferenceSlideshow from "../components/ConferenceSlideshow";
 
 export const metadata = {
-  title: "Annual Conference | SLPA",
+  title: "Conferences & Events | SLPA",
 };
 
 export default function Conference() {
@@ -12,66 +12,32 @@ export default function Conference() {
     <>
       <section className="page-hero dark">
         <div className="wrap">
-          <div className="eyebrow">
-            Annual Conference &middot; May 24&ndash;26, 2024 &middot; Atlanta,
-            GA
-          </div>
-          <h1>Empowering Tomorrow: Somaliland Professionals in Unity</h1>
+          <div className="eyebrow">Conferences &amp; Events</div>
+          <h1>
+            Where the <em>whole network</em> meets.
+          </h1>
           <p className="lede">
-            An unparalleled three-day journey of cultural celebration,
-            professional development, and networking &mdash; bringing the
-            brightest minds from every sector together to share knowledge,
-            foster collaboration, and celebrate Somaliland heritage.
+            The annual conference is SLPA&rsquo;s flagship &mdash; days of
+            cultural celebration, professional development, and networking.
+            Between editions, regional events carry that energy from city to
+            city. The latest edition: &ldquo;Empowering Tomorrow: Somaliland
+            Professionals in Unity,&rdquo; Atlanta, May 2024.
           </p>
           <div className="btn-row">
             <Link href="/conference/2024-atlanta" className="btn btn-light">
-              See the recap &amp; gallery
+              2024 recap &amp; gallery
+            </Link>
+            <Link
+              href="/conference/2024-atlanta/program"
+              className="btn btn-outline-light"
+            >
+              2024 program &amp; speakers
             </Link>
             <a href="#past" className="btn btn-outline-light">
               Past conferences
             </a>
           </div>
           <ConferenceSlideshow />
-        </div>
-      </section>
-
-      <section>
-        <div className="wrap">
-          <Reveal className="section-head">
-            <div className="eyebrow">The Weekend</div>
-            <h2>Three days, three moods.</h2>
-          </Reveal>
-          <Reveal className="programs-grid">
-            <div className="program-card">
-              <div className="k">Day One &middot; Cultural attire</div>
-              <h3>Cultural Mixer</h3>
-              <p>
-                Kick off in style &mdash; network with fellow professionals
-                while showcasing your finest cultural attire, in a vibrant
-                evening of music, dance, and cultural exchange that sets the
-                tone for unity.
-              </p>
-            </div>
-            <div className="program-card">
-              <div className="k">Day Two &middot; Professional / Black tie</div>
-              <h3>Conference &amp; Black Tie Gala</h3>
-              <p>
-                A full day of thought-provoking panels and workshops led by
-                leaders at the front of their fields. As the sun sets, the
-                elegance unfolds &mdash; dinner, live entertainment, and a
-                surprise guest.
-              </p>
-            </div>
-            <div className="program-card">
-              <div className="k">Day Three &middot; Casual</div>
-              <h3>BBQ &amp; Networking</h3>
-              <p>
-                Wind down in a relaxed atmosphere &mdash; savor great food,
-                connect with new friends, and reflect on the insights gained
-                over the weekend.
-              </p>
-            </div>
-          </Reveal>
         </div>
       </section>
 
@@ -111,21 +77,79 @@ export default function Conference() {
               </p>
             </div>
           </Reveal>
-          <Reveal className="success-note" style={{ marginTop: "28px" }}>
-            <strong>Good to know:</strong> Students qualify for 50% off tickets
-            &mdash; reach out at{" "}
+        </div>
+      </section>
+
+      <section id="regional">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <div className="eyebrow">Regional Events</div>
+            <h2>Between conferences, SLPA comes to your city.</h2>
+            <p>
+              Since the Atlanta conference, a traveling series of regional
+              forums has carried the momentum across the country &mdash; a day
+              of keynotes, roundtables, mentorship, and networking, hosted by
+              local SLPA chapters.
+            </p>
+          </Reveal>
+          <Reveal className="article">
+            <div className="k">Latest Stop &middot; April 18, 2026</div>
+            <h3>Dallas Regional Forum</h3>
+            <div className="byline">
+              Embassy Suites, Dallas, TX &middot; 140+ attendees from Texas,
+              Oklahoma &amp; Louisiana
+            </div>
+            <p>
+              The seventh stop on the regional series &mdash; and one of the
+              largest yet. Mohamoud Egal, founder of Amoud Foundation, opened
+              with a keynote on unity and education; petroleum engineer
+              Abdisamad Artan traced Somaliland&rsquo;s oil and gas journey
+              from the 1960s to today. Roundtables tackled regional
+              engagement, mentorship, and how diaspora professionals can
+              contribute to Somaliland&rsquo;s development, alongside a career
+              panel spanning AI, engineering, technology, and medicine.
+            </p>
             <a
-              href="mailto:myslpa.info@gmail.com"
-              style={{ color: "var(--olive)", fontWeight: 600 }}
+              className="more"
+              href="https://www.instagram.com/myslpa_/p/DYaVmKMFQlj/"
             >
-              myslpa.info@gmail.com
+              See the recap on Instagram{" "}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
             </a>
-            . Tickets are nonrefundable and are not sold at the door.
+          </Reveal>
+          <Reveal>
+            <div className="city-tags">
+              <span>New York City</span>
+              <span>Greater Columbus</span>
+              <span>Boston</span>
+              <span>Minnesota</span>
+              <span>Seattle</span>
+              <span>Dallas</span>
+            </div>
+            <div className="success-note" style={{ marginTop: "24px" }}>
+              <strong>Want the next stop in your city?</strong> Follow{" "}
+              <a
+                href="https://www.instagram.com/myslpa_/"
+                style={{ color: "var(--olive)", fontWeight: 600 }}
+              >
+                @myslpa_
+              </a>{" "}
+              for announcements, or reach out at{" "}
+              <a
+                href="mailto:myslpa.info@gmail.com"
+                style={{ color: "var(--olive)", fontWeight: 600 }}
+              >
+                myslpa.info@gmail.com
+              </a>{" "}
+              to help organize one.
+            </div>
           </Reveal>
         </div>
       </section>
 
-      <section id="past">
+      <section id="past" className="section-soft">
         <div className="wrap">
           <Reveal className="section-head">
             <div className="eyebrow">Past Conferences</div>

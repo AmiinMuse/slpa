@@ -47,6 +47,28 @@ export default function Updates() {
           <Reveal className="timeline">
             <div className="tl-row">
               <div>
+                <div className="yr">2026</div>
+              </div>
+              <div>
+                <h4>The Regional Series Goes South</h4>
+                <ul>
+                  <li>
+                    Seventh stop on the regional series: the Dallas Regional
+                    Forum drew 140+ attendees from Texas, Oklahoma, and
+                    Louisiana &mdash; one of the largest regional gatherings
+                    yet.
+                  </li>
+                  <li>
+                    7th Annual Ramadan Fundraiser supported the Ainabo
+                    International Hospital in Sool &mdash; surpassing its goal
+                    and officially reaching all six regions of Somaliland.
+                  </li>
+                </ul>
+              </div>
+              <span className="tag live">Ongoing</span>
+            </div>
+            <div className="tl-row">
+              <div>
                 <div className="yr">2025</div>
               </div>
               <div>
@@ -64,7 +86,7 @@ export default function Updates() {
                   </li>
                 </ul>
               </div>
-              <span className="tag live">Ongoing</span>
+              <span className="tag">Past year</span>
             </div>
             <div className="tl-row">
               <div>
