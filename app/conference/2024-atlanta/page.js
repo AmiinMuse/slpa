@@ -27,8 +27,11 @@ export default function AtlantaRecap() {
             <a href="#gallery" className="btn btn-light">
               Browse the gallery
             </a>
-            <Link href="/conference" className="btn btn-outline-light">
-              About the conference
+            <Link
+              href="/conference/2024-atlanta/program"
+              className="btn btn-outline-light"
+            >
+              Program &amp; speakers
             </Link>
           </div>
           <div className="conf-meta">
@@ -36,7 +39,8 @@ export default function AtlantaRecap() {
               <strong>Dates</strong>May 24&ndash;26, 2024
             </div>
             <div>
-              <strong>Location</strong>Atlanta, Georgia
+              <strong>Venue</strong>Loudermilk Conference Center &mdash;
+              Atlanta, GA
             </div>
             <div>
               <strong>The weekend</strong>Cultural Mixer &middot; Conference

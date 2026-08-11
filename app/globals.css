@@ -222,6 +222,12 @@ footer p.mission{font-size:14px;line-height:1.65;max-width:34ch;color:rgba(35,38
   .past-conf.flip .past-media{order:0;}
 }
 
+.panelists{list-style:none;margin:16px 0 0;padding:0;}
+.panelists li{padding:10px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.55;color:rgba(35,38,31,0.65);}
+.panelists li strong{color:var(--ink);font-weight:600;}
+.city-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;}
+.city-tags span{font-size:12.5px;padding:7px 14px;border:1px solid var(--line);color:rgba(35,38,31,0.65);}
+
 .gallery-chapter{margin-top:56px;}
 .gallery-chapter:first-of-type{margin-top:0;}
 .gallery-head{max-width:640px;margin-bottom:24px;}
