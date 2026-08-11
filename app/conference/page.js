@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "../components/Reveal";
 import JoinBand from "../components/JoinBand";
 import ConferenceSlideshow from "../components/ConferenceSlideshow";
@@ -23,12 +24,9 @@ export default function Conference() {
             foster collaboration, and celebrate Somaliland heritage.
           </p>
           <div className="btn-row">
-            <a
-              href="https://myslpa.org/2024-atl-recap-%2B-gallery"
-              className="btn btn-light"
-            >
+            <Link href="/conference/2024-atlanta" className="btn btn-light">
               See the recap &amp; gallery
-            </a>
+            </Link>
             <a href="#past" className="btn btn-outline-light">
               Past conferences
             </a>
