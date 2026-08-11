@@ -1,5 +1,6 @@
 import Reveal from "../components/Reveal";
 import JoinBand from "../components/JoinBand";
+import ConferenceSlideshow from "../components/ConferenceSlideshow";
 
 export const metadata = {
   title: "Annual Conference | SLPA",
@@ -32,6 +33,7 @@ export default function Conference() {
               Past conferences
             </a>
           </div>
+          <ConferenceSlideshow />
         </div>
       </section>
 
