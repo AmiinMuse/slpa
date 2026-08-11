@@ -1,5 +1,7 @@
+import Link from "next/link";
 import Reveal from "../components/Reveal";
 import JoinBand from "../components/JoinBand";
+import ConferenceSlideshow from "../components/ConferenceSlideshow";
 
 export const metadata = {
   title: "Annual Conference | SLPA",
@@ -22,16 +24,14 @@ export default function Conference() {
             foster collaboration, and celebrate Somaliland heritage.
           </p>
           <div className="btn-row">
-            <a
-              href="https://myslpa.org/2024-atl-recap-%2B-gallery"
-              className="btn btn-light"
-            >
+            <Link href="/conference/2024-atlanta" className="btn btn-light">
               See the recap &amp; gallery
-            </a>
+            </Link>
             <a href="#past" className="btn btn-outline-light">
               Past conferences
             </a>
           </div>
+          <ConferenceSlideshow />
         </div>
       </section>
 
@@ -131,69 +131,132 @@ export default function Conference() {
             <div className="eyebrow">Past Conferences</div>
             <h2>Building momentum, year after year.</h2>
           </Reveal>
-          <Reveal className="timeline">
-            <div className="tl-row">
-              <div>
-                <div className="yr">2022</div>
-                <div className="city">Washington, D.C.</div>
+          <Reveal className="past-conf">
+            <div>
+              <div className="eyebrow">2022 &middot; Washington, D.C.</div>
+              <h3>Somaliland-American Conference</h3>
+              <div className="past-meta">
+                <div>
+                  <strong>Date</strong>March 19, 2022
+                </div>
+                <div>
+                  <strong>Venue</strong>DoubleTree Tysons &mdash; McLean, VA
+                </div>
+                <div>
+                  <strong>Attendance</strong>300+ from the U.S. &amp; Canada
+                </div>
               </div>
-              <div>
-                <h4>Somaliland-American Conference</h4>
-                <p>
-                  Hosted with the Somaliland Mission to the U.S. on March 19,
-                  2022 &mdash; 300+ attendees from the U.S. and Canada, opening
-                  remarks from Representative Bashir Goth, and a keynote from
-                  Somaliland&#39;s Minister of Foreign Affairs, Dr. Essa Kayd.
-                  Five panels covered:
-                </p>
-                <ul>
-                  <li>
-                    Somaliland&#39;s role amid U.S.&ndash;China dynamics in the
-                    Horn of Africa
-                  </li>
-                  <li>
-                    Gender and inclusive politics &mdash; equitable
-                    representation for Somaliland women
-                  </li>
-                  <li>
-                    Healthcare and education challenges, and the diaspora&#39;s
-                    role
-                  </li>
-                  <li>Democracy, justice, and freedom of speech</li>
-                  <li>Business, job creation, and investment opportunities</li>
-                </ul>
-              </div>
-              <span className="tag">Past event</span>
+              <p>
+                Hosted with the Somaliland Mission to the U.S., with journalist
+                Mona Kosar Abdi as Master of Ceremonies, opening remarks from
+                Representative Bashir Goth, and a keynote from
+                Somaliland&#39;s Minister of Foreign Affairs, Dr. Essa Kayd.
+                The day closed with a banquet hosted by the Somaliland Mission
+                in honor of the visiting delegation. Five panels covered:
+              </p>
+              <ul className="past-panels">
+                <li>
+                  Somaliland&#39;s role amid U.S.&ndash;China dynamics in the
+                  Horn of Africa
+                </li>
+                <li>
+                  Gender and inclusive politics &mdash; equitable
+                  representation for Somaliland women
+                </li>
+                <li>
+                  Healthcare and education challenges, and the diaspora&#39;s
+                  role
+                </li>
+                <li>Democracy, justice, and freedom of speech</li>
+                <li>Business, job creation, and investment opportunities</li>
+              </ul>
+              <a className="more" href="https://myslpa.org/2022-dc-conference">
+                Read the full conference memo{" "}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
             </div>
-            <div className="tl-row">
-              <div>
-                <div className="yr">2021</div>
-                <div className="city">Virtual</div>
-              </div>
-              <div>
-                <h4>#SomalilandAt30 Conference</h4>
-                <p>
-                  Commemorating 30 years of peace and development under the
-                  theme &quot;Unity Through Community Building.&quot;
-                </p>
-              </div>
-              <span className="tag">Past event</span>
+            <figure className="photo-frame past-media" style={{ margin: 0 }}>
+              <img
+                src="/past-conferences/dc-2022.jpg"
+                alt="Attendees at the 2022 Somaliland-American Conference"
+                loading="lazy"
+              />
+              <figcaption>
+                300+ attendees filled the hall in the Washington, D.C. area
+                &mdash; March 2022.
+              </figcaption>
+            </figure>
+          </Reveal>
+
+          <Reveal className="past-conf flip">
+            <div>
+              <div className="eyebrow">2021 &middot; Virtual</div>
+              <h3>#SomalilandAt30 Conference</h3>
+              <p>
+                Commemorating 30 years of peace and development under the theme
+                &ldquo;Unity Through Community Building&rdquo; &mdash; hosted
+                virtually for members nationwide, alongside a roundtable in
+                Hargeisa.
+              </p>
             </div>
-            <div className="tl-row">
-              <div>
-                <div className="yr">2019</div>
-                <div className="city">United States</div>
+            <div className="past-tile past-media">
+              <div className="big">30</div>
+              <div className="sub">Years of peace &amp; development</div>
+              <div className="theme">
+                &ldquo;Unity Through Community Building&rdquo;
               </div>
-              <div>
-                <h4>SLPA Launch &amp; Development Conference &#39;19</h4>
-                <p>
-                  Our founding year: the launch conference, coffee meet-ups in
-                  five cities, and panel discussions at the Somali Development
-                  Conference with Abaarso School at Marist College.
-                </p>
-              </div>
-              <span className="tag">Past event</span>
             </div>
+          </Reveal>
+
+          <Reveal className="past-conf">
+            <div>
+              <div className="eyebrow">2019 &middot; Poughkeepsie, NY</div>
+              <h3>Somali Development Conference at Marist College</h3>
+              <div className="past-meta">
+                <div>
+                  <strong>Date</strong>June 8&ndash;9, 2019
+                </div>
+                <div>
+                  <strong>Venue</strong>Marist College
+                </div>
+                <div>
+                  <strong>SLPA delegation</strong>~30 members nationwide
+                </div>
+              </div>
+              <p>
+                Months after SLPA&#39;s launch, some 30 members traveled from
+                across the U.S. to join honored guests Edna Adan and
+                Ambassador Bashir Goth &mdash; alongside attendees from
+                Harvard, Columbia, Macalester, the IFC, and Morgan Stanley.
+                SLPA members spoke on five panels, from public health and the
+                diaspora&#39;s role to Somaliland&#39;s financial sector. It
+                was also the first time the founding committee met in person
+                &mdash; the spark for the coffee meet-ups and conferences that
+                followed.
+              </p>
+              <a
+                className="more"
+                href="https://myslpa.org/development-conference19"
+              >
+                Read the recap{" "}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+            <figure className="photo-frame past-media" style={{ margin: 0 }}>
+              <img
+                src="/past-conferences/marist-2019.jpg"
+                alt="SLPA members and attendees at Marist College in 2019"
+                loading="lazy"
+              />
+              <figcaption>
+                SLPA members among the attendees at Marist College &mdash;
+                June 2019.
+              </figcaption>
+            </figure>
           </Reveal>
         </div>
       </section>

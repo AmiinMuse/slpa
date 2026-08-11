@@ -156,12 +156,12 @@ export default function Home() {
             <Link href="/conference" className="btn btn-light">
               Full conference details
             </Link>
-            <a
-              href="https://myslpa.org/2024-atl-recap-%2B-gallery"
+            <Link
+              href="/conference/2024-atlanta"
               className="btn btn-outline-light"
             >
               Recap &amp; gallery
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -274,23 +274,7 @@ export default function Home() {
         <div className="wrap">
           <Reveal className="donate-box">
             <div>
-              <div
-                className="eyebrow"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  marginBottom: "14px",
-                }}
-              >
-                <span
-                  style={{
-                    width: "24px",
-                    height: "1px",
-                    background: "var(--olive)",
-                    display: "inline-block",
-                  }}
-                />
+              <div className="eyebrow" style={{ marginBottom: "14px" }}>
                 Support SLPA
               </div>
               <h2>
