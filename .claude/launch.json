@@ -7,6 +7,13 @@
       "runtimeArgs": ["node_modules/next/dist/bin/next", "dev"],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "name": "slpa-next-start",
+      "runtimeExecutable": "/Users/amiin/.nvm/versions/node/v20.20.2/bin/node",
+      "runtimeArgs": ["node_modules/next/dist/bin/next", "start"],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }
