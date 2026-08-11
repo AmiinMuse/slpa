@@ -1,39 +1,62 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import styles from "./Header.module.css";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { href: "/about", label: "About" },
-  { href: "/events", label: "Events" },
+  { href: "/", label: "Home" },
+  { href: "/conference", label: "Conference" },
   { href: "/programs", label: "Programs" },
+  { href: "/op-eds", label: "Op-Eds" },
   { href: "/updates", label: "Updates" },
-  { href: "/get-involved", label: "Get Involved" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
   return (
-    <header className={styles.header}>
-      <div className={styles.inner}>
-        <Link href="/" className={styles.brand}>
-          <Image
-            src="/slpa-logo.png"
-            alt="SLPA"
-            width={1536}
-            height={1024}
-            className={styles.logo}
-            priority
-          />
+    <header>
+      <div className="wrap nav-row">
+        <Link href="/" className="brand" onClick={() => setOpen(false)}>
+          <img src="/logo-mark.png" alt="SLPA logo" className="logo-mark" />
+          <div className="brand-text">
+            Somaliland Professionals
+            <br />
+            <small>Association of America &middot; Est. 2018</small>
+          </div>
         </Link>
-        <nav className={styles.nav}>
-          {NAV_LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className={styles.navLink}>
-              {link.label}
-            </Link>
-          ))}
+        <button
+          className="menu-btn"
+          aria-label="Toggle menu"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+        <nav className={open ? "mobile-open" : undefined}>
+          <ul>
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={pathname === link.href ? "active" : undefined}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a href="https://forms.gle/je2pJbUCcXUVd5FQA" className="nav-cta">
+                Become a Member
+              </a>
+            </li>
+          </ul>
         </nav>
-        <Link href="/donate" className={styles.donateButton}>
-          Donate
-        </Link>
       </div>
     </header>
   );
