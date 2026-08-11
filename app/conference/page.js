@@ -170,12 +170,14 @@ export default function Conference() {
                 <li>Democracy, justice, and freedom of speech</li>
                 <li>Business, job creation, and investment opportunities</li>
               </ul>
-              <a className="more" href="https://myslpa.org/2022-dc-conference">
-                Read the full conference memo{" "}
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </a>
+              <div className="btn-row" style={{ marginTop: "24px" }}>
+                <Link href="/conference/2022-dc" className="btn btn-ghost">
+                  Read the full conference memo
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: "14px", height: "14px" }}>
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </Link>
+              </div>
             </div>
             <figure className="photo-frame past-media" style={{ margin: 0 }}>
               <img
@@ -236,15 +238,14 @@ export default function Conference() {
                 &mdash; the spark for the coffee meet-ups and conferences that
                 followed.
               </p>
-              <a
-                className="more"
-                href="https://myslpa.org/development-conference19"
-              >
-                Read the recap{" "}
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg>
-              </a>
+              <div className="btn-row" style={{ marginTop: "24px" }}>
+                <Link href="/conference/2019-marist" className="btn btn-ghost">
+                  Read the full recap
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: "14px", height: "14px" }}>
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </Link>
+              </div>
             </div>
             <figure className="photo-frame past-media" style={{ margin: 0 }}>
               <img
