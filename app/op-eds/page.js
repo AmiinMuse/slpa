@@ -28,7 +28,7 @@ export default function OpEds() {
         </div>
       </section>
 
-      <section>
+      <section className="section-sand">
         <div className="wrap">
           <Reveal
             className="photo-frame"
