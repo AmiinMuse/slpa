@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about">
+      <section id="about" className="section-olive">
         <div className="wrap">
           <Reveal className="section-head">
             <div className="eyebrow">Who We Are</div>
@@ -230,7 +230,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="section-sand">
         <div className="wrap">
           <Reveal className="section-head">
             <div className="eyebrow">Our Impact</div>

@@ -22,7 +22,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section>
+      <section className="section-olive">
         <div className="wrap">
           <Reveal className="contact-grid">
             <div>

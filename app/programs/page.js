@@ -21,7 +21,7 @@ export default function Programs() {
         </div>
       </section>
 
-      <section id="mentorship">
+      <section id="mentorship" className="section-olive">
         <div className="wrap">
           <Reveal className="section-head">
             <div className="eyebrow">Mentorship Program</div>
