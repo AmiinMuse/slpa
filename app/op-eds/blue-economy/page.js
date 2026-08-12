@@ -10,6 +10,11 @@ const BLOCKS = [
     s: "The blue economy is one of the least exploited sectors in Somaliland contributing 0.3% to GDP despite the fact that the Horn of Africa has the largest coast in mainland Africa. Somaliland has an 850 km long coastline that borders the Gulf of Aden and the Indian Ocean. Currently there are more than 600 species present in Somaliland's marine fisheries of which 400 could be leveraged commercially. However, less than 10% of these fish stocks are exploited leaving the blue economy completely untapped.",
   },
   {
+    t: "img",
+    src: "/op-eds/blue-hero.jpg",
+    alt: "Illustration of Somaliland's blue economy — fishing, offshore wind, and marine life",
+  },
+  {
     t: "p",
     s: "There have been both local and international efforts to invest in the fishing industry, but most of these projects did not take off due to lower demand for fish, culturally Somalis prefer livestock. Nonetheless, fish diet is becoming more acceptable in urban areas, as climate change is pushing this desert state into finishing. Somaliland has a comparative advantage to export fish stocks to neighboring, landlocked East African countries.",
   },
@@ -20,6 +25,11 @@ const BLOCKS = [
   {
     t: "p",
     s: "The cold chain infrastructure is barely non-existent at the moment. This makes it challenging for the fish stocks to be marketed and sold across Somaliland. Cold chain development is essential in reducing food losses and improving food quality in the fishing industry. Low access to ice and cold storage often result in fish being spoiled before reaching the market. Improving the cold chain infrastructure would immediately benefit fishers, processors, and others involved in the sector.",
+  },
+  {
+    t: "img",
+    src: "/op-eds/blue-coldchain.jpg",
+    alt: "Fisheries Cold Chain Development framework diagram",
   },
   {
     t: "src",
@@ -33,6 +43,11 @@ const BLOCKS = [
     t: "p",
     s: "There is no doubt that Somaliland has rich marine assets, but it lacks the appropriate infrastructure to fully leverage the industry. Currently, the unexploited fish stocks become vulnerable to piracy from neighboring countries and foreign fishing.",
   },
+  {
+    t: "img",
+    src: "/op-eds/blue-catch.jpg",
+    alt: "Figure 1: Fish catch versus availability — Somaliland fish stocks in metric tons",
+  },
   { t: "src", s: "Source: Industry Analysis, Fishing in Somaliland, 2013" },
   {
     t: "p",
@@ -41,6 +56,11 @@ const BLOCKS = [
   {
     t: "p",
     s: "The fishing industry is a highly profitable sector where the tuna industry alone is worth $6 billion globally. This is a market that Somaliland could easily tap into if the proper processing facilities are built. Investment in the marine sector would not only generate revenues, but would create jobs for many unemployed youths in the coastal regions.",
+  },
+  {
+    t: "img",
+    src: "/op-eds/blue-imports.jpg",
+    alt: "Table of Ethiopia's fish and fish-product imports by country and net weight",
   },
   {
     t: "src",
@@ -72,6 +92,11 @@ const BLOCKS = [
   {
     t: "p",
     s: "Most of the fishing enterprises in Somaliland are informal – businesses that lack formal license registration and do not pay any taxes. Informality often leads to poor governance and low productivity. According to a World Bank research, the average informal business in developing economies is only one-quarter as productive as the average firm operating in the formal sector. Therefore, Somaliland's Ministry of Trade, Industry, and Tourism should put together a plan that would formalize the businesses in the fishing industry. In order for Somaliland's blue economy to significantly contribute to the GDP, fishing businesses should all be formalized by including them in the formal tax and financial systems.",
+  },
+  {
+    t: "img",
+    src: "/op-eds/blue-productivity.jpg",
+    alt: "Bar chart: average productivity in formal versus informal firms, U.S. dollars per worker",
   },
   { t: "src", s: "Source: World Bank, 2018." },
   {

@@ -10,6 +10,12 @@ const BLOCKS = [
     s: "Developing countries have one large need limiting their ability to progress and advance – access to affordable, reliable, and clean energy. After all, companies and societies cannot thrive sustainably without access to reasonable electricity and petroleum products. While this pressing issue happens in developing countries around the world, one prime example is Somaliland, where electricity and petroleum products are priced higher than those in their peer countries.",
   },
   {
+    t: "img",
+    src: "/op-eds/energy-solar.jpg",
+    alt: "Workers installing rooftop solar panels in a Somaliland town",
+    cap: "Image credit: Edna Adan Maternity Hospital",
+  },
+  {
     t: "p",
     s: "Somaliland has been a government for almost 30 years, after dissolving its union unilaterally with Somalia in 1991. Even with almost 30 years to work out some of the problems associated with being their own independent country, they still struggle in several ways. Both Somaliland and Somalia currently have one thing in common compared to their peers in the region – a lack of affordable energy.",
   },
