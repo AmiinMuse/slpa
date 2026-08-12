@@ -80,7 +80,7 @@ export default function Conference() {
         </div>
       </section>
 
-      <section id="regional">
+      <section id="regional" className="section-olive">
         <div className="wrap">
           <Reveal className="section-head">
             <div className="eyebrow">Regional Events</div>

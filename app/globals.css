@@ -45,7 +45,7 @@ nav a.active{color:var(--olive);border-bottom:1.5px solid var(--olive);}
 .hero-tag .k{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:0.12em;font-weight:600;color:rgba(255,255,255,0.6);}
 .hero-tag .t{display:block;font-family:var(--font-fraunces),serif;font-style:italic;font-size:18px;margin-top:4px;color:var(--paper);}
 
-.page-hero{padding:76px 0 60px;border-bottom:1px solid var(--line);}
+.page-hero{padding:76px 0 60px;border-bottom:1px solid var(--line);background:linear-gradient(155deg,var(--gold-tint) 0%,rgba(241,231,211,0) 40%),radial-gradient(100% 120% at 92% 0%,var(--olive-tint) 0%,rgba(238,240,233,0) 55%),var(--bg);}
 .page-hero h1{font-size:clamp(30px,4.2vw,46px);max-width:22ch;margin-top:18px;}
 .page-hero p.lede{margin-bottom:0;}
 .page-hero .btn-row{margin-top:32px;}

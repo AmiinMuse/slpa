@@ -20,7 +20,7 @@ export default function Updates() {
         </div>
       </section>
 
-      <section>
+      <section className="section-sand">
         <div className="wrap">
           <Reveal className="mentor-grid" style={{ marginBottom: "64px" }}>
             <figure className="photo-frame" style={{ margin: 0 }}>
