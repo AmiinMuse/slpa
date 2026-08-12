@@ -21,7 +21,7 @@ export default function Header() {
     <header>
       <div className="wrap nav-row">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
-          <img src="/logo-mark.png" alt="SLPA logo" className="logo-mark" />
+          <img src="/slpa-logo-2.png" alt="SLPA logo" className="logo-mark" />
           <div className="brand-text">
             Somaliland Professionals
             <br />
