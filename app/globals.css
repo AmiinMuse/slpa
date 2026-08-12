@@ -37,7 +37,7 @@ nav a.active{color:var(--olive);border-bottom:1.5px solid var(--olive);}
 .hero-copy .btn-row{margin-top:0;}
 .hero-media{position:relative;}
 .hero-photo{margin:0;box-shadow:0 24px 60px -32px rgba(46,54,39,0.55);}
-.hero-photo img{aspect-ratio:5/4;object-fit:cover;object-position:center 30%;}
+.hero-photo img{aspect-ratio:5/4;object-fit:cover;object-position:center 38%;}
 .hero-tag{position:absolute;left:-14px;bottom:26px;background:var(--olive-deep);color:var(--paper);padding:14px 20px;box-shadow:0 16px 34px -18px rgba(46,54,39,0.7);}
 .hero-tag .k{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:0.12em;font-weight:600;color:rgba(255,255,255,0.6);}
 .hero-tag .t{display:block;font-family:var(--font-fraunces),serif;font-style:italic;font-size:18px;margin-top:4px;color:var(--paper);}
