@@ -1,32 +1,52 @@
 import Link from "next/link";
 import Reveal from "./components/Reveal";
 import JoinBand from "./components/JoinBand";
+import ConferenceSlideshow from "./components/ConferenceSlideshow";
 
 export default function Home() {
   return (
     <>
       <section className="hero">
         <div className="wrap">
-          <div className="eyebrow">A Space to Collaborate &amp; Exchange Ideas</div>
-          <h1>
-            Moving the <em>next generation</em> forward.
-          </h1>
-          <p className="lede">
-            SLPA brings together Somaliland-American professionals across the
-            country &mdash; to mentor, network, and advocate &mdash; and
-            connects our diaspora with the professionals building Somaliland
-            today.
-          </p>
-          <div className="btn-row">
-            <a
-              href="https://forms.gle/je2pJbUCcXUVd5FQA"
-              className="btn btn-primary"
-            >
-              Become a member
-            </a>
-            <Link href="/conference" className="btn btn-ghost">
-              Explore the annual conference
-            </Link>
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <div className="eyebrow">
+                A Space to Collaborate &amp; Exchange Ideas
+              </div>
+              <h1>
+                Moving the <em>next generation</em> forward.
+              </h1>
+              <p className="lede">
+                SLPA brings together Somaliland-American professionals across
+                the country &mdash; to mentor, network, and advocate &mdash;
+                and connects our diaspora with the professionals building
+                Somaliland today.
+              </p>
+              <div className="btn-row">
+                <a
+                  href="https://forms.gle/je2pJbUCcXUVd5FQA"
+                  className="btn btn-primary"
+                >
+                  Become a member
+                </a>
+                <Link href="/conference" className="btn btn-ghost">
+                  Explore the annual conference
+                </Link>
+              </div>
+            </div>
+            <div className="hero-media">
+              <figure className="photo-frame hero-photo">
+                <img
+                  src="/conference-slides/slide-01.jpg"
+                  alt="SLPA members gathered at the 2024 conference in Atlanta"
+                  fetchPriority="high"
+                />
+              </figure>
+              <div className="hero-tag">
+                <span className="k">Atlanta &middot; May 2024</span>
+                <span className="t">Empowering Tomorrow</span>
+              </div>
+            </div>
           </div>
           <div className="stats">
             <div className="stat">
@@ -151,6 +171,9 @@ export default function Home() {
                 reflect.
               </p>
             </div>
+          </Reveal>
+          <Reveal>
+            <ConferenceSlideshow />
           </Reveal>
           <Reveal className="btn-row" style={{ marginTop: "36px" }}>
             <Link href="/conference" className="btn btn-light">
