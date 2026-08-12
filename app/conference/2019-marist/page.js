@@ -15,13 +15,10 @@ export default function MaristConference() {
             Conference Recap &middot; Poughkeepsie, NY &middot; June 8&ndash;9,
             2019
           </div>
-          <h1>Somali Development Conference at Marist College</h1>
+          <h1>Somali Development Conference at Marist College 2019</h1>
           <p className="lede">
-            Months after SLPA&rsquo;s launch, roughly 30 members traveled from
-            across the country for the &ldquo;Somali Education and Development
-            Conference&rdquo; at Marist College &mdash; a reenergizing two days
-            that renewed the sense of possibility for the region and our
-            contributions to it.
+            Somali Development Conference Recap &mdash; Marist College, NY (June
+            8th&ndash;June 9th).
           </p>
           <div className="btn-row">
             <Link href="/conference#past" className="btn btn-outline-light">
@@ -46,65 +43,57 @@ export default function MaristConference() {
         <div className="wrap">
           <Reveal className="section-head">
             <div className="eyebrow">The Recap</div>
-            <h2>Our founding year, on a national stage.</h2>
-            <p>
-              The conference attracted attendees from Harvard University,
-              Columbia University, and Macalester College, and organizations
-              including the International Finance Corporation, the American
-              Enterprise Institute, and Morgan Stanley. Among the honored
-              guests were activist Edna Adan, founder of the Edna Adan
-              Maternity Hospital in Somaliland, and Bashir Goth, Somaliland
-              Ambassador to the United States.
-            </p>
-            <p>
-              SLPA members traveled in from the Bay Area, Seattle, Florida,
-              Texas, Ohio, Minnesota, and D.C. &mdash; and it was the first
-              time the founding committee met in person since the March
-              launch. The weekend sparked the coffee meet-ups, panels, and
-              annual conferences that followed.
-            </p>
+            <h2>Somali Development Conference 2019</h2>
           </Reveal>
-          <Reveal className="mentor-grid">
-            <div>
-              <h3 style={{ fontSize: "19px", marginBottom: "16px" }}>
-                SLPA members spoke on five panels
-              </h3>
-              <ul className="past-panels">
-                <li>Public health in Somaliland</li>
-                <li>The contributing role of the diaspora</li>
-                <li>
-                  Building a robust financial sector in Somaliland
-                </li>
-                <li>IT solutions in technological advancement</li>
-                <li>
-                  The ongoing battle against female genital mutilation in
-                  Somaliland
-                </li>
-              </ul>
-              <div className="success-note">
-                <strong>From the recap:</strong> members described the event as
-                reenergizing &mdash; renewing the sense of possibility for the
-                region and our contributions &mdash;{" "}
-                <a
-                  href="https://myslpa.org/development-conference19"
-                  style={{ color: "var(--olive)", fontWeight: 600 }}
-                >
-                  read the original recap
-                </a>
-                .
-              </div>
-            </div>
-            <figure className="photo-frame" style={{ margin: 0 }}>
-              <img
-                src="/past-conferences/marist-2019.jpg"
-                alt="SLPA members and attendees at Marist College in 2019"
-                loading="lazy"
-              />
-              <figcaption>
-                SLPA members among the attendees at Marist College &mdash;
-                June 2019.
-              </figcaption>
-            </figure>
+          <Reveal
+            className="photo-frame"
+            style={{ margin: "0 0 40px", maxWidth: "760px" }}
+          >
+            <img
+              src="/past-conferences/marist-2019.jpg"
+              alt="SLPA members and attendees at Marist College in 2019"
+              loading="lazy"
+            />
+          </Reveal>
+          <Reveal className="prose">
+            <p>
+              SLPA was present for the Leadership in &ldquo;Somali Education and
+              Development Conference&rdquo; held at Marist College in
+              Poughkeepsie, New York. The conference was incredibly successful
+              and attracted attendees from schools such as Harvard University,
+              Columbia University, Macalester College, and organizations
+              including the International Finance Corporation, American
+              Enterprise Institute, and Morgan Stanley. Among the honored guests
+              were activist Edna Adan, founder of the Edna Adan Maternity
+              Hospital in Somaliland and Bashir Goth, Somaliland Ambassador to
+              the United States&rdquo; as highlighted on the Marist College
+              website. Roughly 30 SLPA members participated in the conference,
+              traveling from different parts of the U.S. including the Bay Area,
+              Seattle, Florida, Texas, Ohio, Minnesota and D.C.
+            </p>
+            <p>
+              SLPA members benefited greatly from the conference expressing that
+              the event was reenergizing and renewed the sense of possibility for
+              the region and our contributions. During the event, like minded
+              individuals across the US were able to get together and begin these
+              crucial conversations on development and the progression of
+              Somaliland. The SLPA committee members also participated in five
+              panels throughout the two-day event, giving their insight on topics
+              such as public health in Somaliland, the contributing role of the
+              diaspora, the role of building a robust financial sector in
+              Somaliland, IT solutions in technological advancements, and the
+              current battle against Female Genital Mutilation in Somaliland.
+            </p>
+            <p>
+              The conference was also the first time all SLPA committee members
+              were able to meet since our launch in March. We currently have had
+              coffee meet ups in 5 US cities. Many members urged the need to
+              expand the coffee meet ups to their local cities. If you are
+              interested in leading one in your respective areas, please send us
+              an email. We are also excited to begin planning a SLPA conference
+              for the year to come. If you have any ideas on what topics/subjects
+              you would like discussed please let us know.
+            </p>
           </Reveal>
         </div>
       </section>
