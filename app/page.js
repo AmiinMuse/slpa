@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Reveal from "./components/Reveal";
 import JoinBand from "./components/JoinBand";
-import ConferenceSlideshow from "./components/ConferenceSlideshow";
 
 export default function Home() {
   return (
@@ -37,8 +36,8 @@ export default function Home() {
             <div className="hero-media">
               <figure className="photo-frame hero-photo">
                 <img
-                  src="/conference-slides/slide-01.jpg"
-                  alt="SLPA members gathered at the 2024 conference in Atlanta"
+                  src="/gallery-2024-atl/atl-084.jpg"
+                  alt="An SLPA member celebrating with the Somaliland flag at the 2024 conference"
                   fetchPriority="high"
                 />
               </figure>
@@ -172,8 +171,50 @@ export default function Home() {
               </p>
             </div>
           </Reveal>
-          <Reveal>
-            <ConferenceSlideshow />
+          <Reveal className="photo-mosaic">
+            <figure className="m-a">
+              <img
+                src="/gallery-2024-atl/atl-107.jpg"
+                alt="Members raising the Somaliland flag on stage at the gala"
+                loading="lazy"
+              />
+              <figcaption>One weekend a year, the whole diaspora is in one room.</figcaption>
+            </figure>
+            <figure className="m-b">
+              <img
+                src="/gallery-2024-atl/atl-160.jpg"
+                alt="Friends together at the closing BBQ in the park"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="m-c">
+              <img
+                src="/gallery-2024-atl/atl-016.jpg"
+                alt="Guests at the SLPA photo backdrop in cultural attire"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="m-d">
+              <img
+                src="/gallery-2024-atl/atl-005.jpg"
+                alt="Professionals networking at the conference"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="m-e">
+              <img
+                src="/gallery-2024-atl/atl-066.jpg"
+                alt="Attendees dancing and waving flags at the cultural mixer"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="m-f">
+              <img
+                src="/gallery-2024-atl/atl-129.jpg"
+                alt="Members catching up over food at the outdoor BBQ"
+                loading="lazy"
+              />
+            </figure>
           </Reveal>
           <Reveal className="btn-row" style={{ marginTop: "36px" }}>
             <Link href="/conference" className="btn btn-light">
