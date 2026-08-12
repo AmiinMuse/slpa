@@ -7,26 +7,45 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="wrap">
-          <div className="eyebrow">A Space to Collaborate &amp; Exchange Ideas</div>
-          <h1>
-            Moving the <em>next generation</em> forward.
-          </h1>
-          <p className="lede">
-            SLPA brings together Somaliland-American professionals across the
-            country &mdash; to mentor, network, and advocate &mdash; and
-            connects our diaspora with the professionals building Somaliland
-            today.
-          </p>
-          <div className="btn-row">
-            <a
-              href="https://forms.gle/je2pJbUCcXUVd5FQA"
-              className="btn btn-primary"
-            >
-              Become a member
-            </a>
-            <Link href="/conference" className="btn btn-ghost">
-              Explore the annual conference
-            </Link>
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <div className="eyebrow">
+                A Space to Collaborate &amp; Exchange Ideas
+              </div>
+              <h1>
+                Moving the <em>next generation</em> forward.
+              </h1>
+              <p className="lede">
+                SLPA brings together Somaliland-American professionals across
+                the country &mdash; to mentor, network, and advocate &mdash;
+                and connects our diaspora with the professionals building
+                Somaliland today.
+              </p>
+              <div className="btn-row">
+                <a
+                  href="https://forms.gle/je2pJbUCcXUVd5FQA"
+                  className="btn btn-primary"
+                >
+                  Become a member
+                </a>
+                <Link href="/conference" className="btn btn-ghost">
+                  Explore the annual conference
+                </Link>
+              </div>
+            </div>
+            <div className="hero-media">
+              <figure className="photo-frame hero-photo">
+                <img
+                  src="/gallery-2024-atl/atl-107.jpg"
+                  alt="SLPA members raising the Somaliland flag together at the 2024 conference"
+                  fetchPriority="high"
+                />
+              </figure>
+              <div className="hero-tag">
+                <span className="k">Atlanta &middot; May 2024</span>
+                <span className="t">Empowering Tomorrow</span>
+              </div>
+            </div>
           </div>
           <div className="stats">
             <div className="stat">
@@ -151,6 +170,51 @@ export default function Home() {
                 reflect.
               </p>
             </div>
+          </Reveal>
+          <Reveal className="photo-mosaic">
+            <figure className="m-a">
+              <img
+                src="/gallery-2024-atl/atl-084.jpg"
+                alt="A member celebrating with the Somaliland flag at the gala"
+                loading="lazy"
+              />
+              <figcaption>One weekend a year, the whole diaspora is in one room.</figcaption>
+            </figure>
+            <figure className="m-b">
+              <img
+                src="/gallery-2024-atl/atl-160.jpg"
+                alt="Friends together at the closing BBQ in the park"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="m-c">
+              <img
+                src="/gallery-2024-atl/atl-016.jpg"
+                alt="Guests at the SLPA photo backdrop in cultural attire"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="m-d">
+              <img
+                src="/gallery-2024-atl/atl-005.jpg"
+                alt="Professionals networking at the conference"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="m-e">
+              <img
+                src="/gallery-2024-atl/atl-066.jpg"
+                alt="Attendees dancing and waving flags at the cultural mixer"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="m-f">
+              <img
+                src="/gallery-2024-atl/atl-129.jpg"
+                alt="Members catching up over food at the outdoor BBQ"
+                loading="lazy"
+              />
+            </figure>
           </Reveal>
           <Reveal className="btn-row" style={{ marginTop: "36px" }}>
             <Link href="/conference" className="btn btn-light">

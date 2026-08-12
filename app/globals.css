@@ -29,10 +29,20 @@ nav a.active{color:var(--olive);border-bottom:1.5px solid var(--olive);}
 .menu-btn{display:none;background:none;border:none;color:var(--ink);cursor:pointer;padding:4px;}
 .menu-btn svg{width:24px;height:24px;}
 
-.hero{padding:92px 0 0;border-bottom:1px solid var(--line);}
-.hero h1{font-size:clamp(34px,5vw,56px);max-width:17ch;margin-top:20px;}
+.hero{padding:72px 0 0;border-bottom:1px solid var(--line);position:relative;overflow:hidden;background:radial-gradient(115% 80% at 88% 8%,var(--olive-tint) 0%,rgba(238,240,233,0) 58%),var(--paper);}
+.hero::before{content:"";position:absolute;inset:0;background:url("/past-conferences/marist-2019.jpg") no-repeat center 28%;background-size:cover;opacity:0.32;filter:grayscale(0.12) saturate(1.12) contrast(1.03);-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,0.7) 52%,rgba(0,0,0,0) 76%);mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,0.7) 52%,rgba(0,0,0,0) 76%);pointer-events:none;z-index:0;}
+.hero .wrap{position:relative;z-index:1;}
+.hero-grid{display:grid;grid-template-columns:1.04fr 0.96fr;gap:56px;align-items:center;}
+.hero h1{font-size:clamp(34px,4.6vw,54px);max-width:15ch;margin-top:18px;}
 .hero h1 em{font-style:italic;font-weight:500;color:var(--olive);}
 .hero p.lede,.page-hero p.lede{font-size:17.5px;line-height:1.65;color:rgba(35,38,31,0.68);max-width:58ch;margin:24px 0 34px;}
+.hero-copy .btn-row{margin-top:0;}
+.hero-media{position:relative;}
+.hero-photo{margin:0;box-shadow:0 24px 60px -32px rgba(46,54,39,0.55);}
+.hero-photo img{aspect-ratio:5/4;object-fit:cover;object-position:center 38%;}
+.hero-tag{position:absolute;left:-14px;bottom:26px;background:var(--olive-deep);color:var(--paper);padding:14px 20px;box-shadow:0 16px 34px -18px rgba(46,54,39,0.7);}
+.hero-tag .k{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:0.12em;font-weight:600;color:rgba(255,255,255,0.6);}
+.hero-tag .t{display:block;font-family:var(--font-fraunces),serif;font-style:italic;font-size:18px;margin-top:4px;color:var(--paper);}
 
 .page-hero{padding:76px 0 60px;border-bottom:1px solid var(--line);}
 .page-hero h1{font-size:clamp(30px,4.2vw,46px);max-width:22ch;margin-top:18px;}
@@ -78,6 +88,14 @@ section{padding:84px 0;}
 .pillar li:first-child{border-top:none;}
 .pillar li::before{content:"";position:absolute;left:0;top:16px;width:6px;height:1.5px;background:var(--olive);}
 
+.photo-mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:158px;gap:10px;margin-top:40px;}
+.photo-mosaic figure{position:relative;margin:0;overflow:hidden;border:1px solid var(--line-light);background:var(--olive-dark);}
+.photo-mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.photo-mosaic figure:hover img{transform:scale(1.06);}
+.photo-mosaic .m-a{grid-column:span 2;grid-row:span 2;}
+.photo-mosaic .m-b,.photo-mosaic .m-e,.photo-mosaic .m-f{grid-column:span 2;}
+.photo-mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 22px 18px;font-family:var(--font-fraunces),serif;font-style:italic;font-size:18px;line-height:1.35;color:var(--paper);background:linear-gradient(to top,rgba(30,36,22,0.9),rgba(30,36,22,0));}
+
 .conf-days{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-light);border:1px solid var(--line-light);margin-top:8px;}
 .conf-day{background:var(--olive-deep);padding:30px 28px;}
 .conf-day .d{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.5);font-weight:600;margin-bottom:12px;}
@@ -89,7 +107,8 @@ section{padding:84px 0;}
 .conf-meta strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);font-weight:600;margin-bottom:6px;}
 
 .impact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-.impact-card{background:var(--paper);padding:34px 30px;}
+.impact-card{background:var(--paper);padding:34px 30px;transition:background .2s ease;}
+.impact-card:hover{background:var(--paper-soft);}
 .impact-card .n{font-family:var(--font-fraunces),serif;font-size:30px;color:var(--olive);line-height:1;margin-bottom:14px;}
 .impact-card h3{font-size:18px;margin-bottom:10px;}
 .impact-card p{font-size:14.5px;line-height:1.6;color:rgba(35,38,31,0.65);margin:0;}
@@ -268,10 +287,15 @@ footer p.mission{font-size:14px;line-height:1.65;max-width:34ch;color:rgba(35,38
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
 
 @media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;}
+  .hero h1{max-width:17ch;}
+  .hero-media{max-width:520px;}
   .stats{grid-template-columns:1fr 1fr;}
   .stat{padding-left:0;border-left:none;border-top:1px solid var(--line);}
   .stat:first-child,.stat:nth-child(2){border-top:none;}
   .pillars,.programs-grid,.programs-grid.two,.conf-days,.impact-grid{grid-template-columns:1fr;}
+  .photo-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:132px;}
+  .photo-mosaic figcaption{font-size:15px;padding:36px 16px 14px;}
   .mentor-grid,.contact-grid{grid-template-columns:1fr;gap:36px;}
   .donate-box{grid-template-columns:1fr;padding:36px 26px;}
   .footer-top{grid-template-columns:1fr 1fr;gap:36px;}
