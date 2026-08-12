@@ -36,8 +36,8 @@ export default function Home() {
             <div className="hero-media">
               <figure className="photo-frame hero-photo">
                 <img
-                  src="/gallery-2024-atl/atl-084.jpg"
-                  alt="An SLPA member celebrating with the Somaliland flag at the 2024 conference"
+                  src="/gallery-2024-atl/atl-107.jpg"
+                  alt="SLPA members raising the Somaliland flag together at the 2024 conference"
                   fetchPriority="high"
                 />
               </figure>
@@ -174,8 +174,8 @@ export default function Home() {
           <Reveal className="photo-mosaic">
             <figure className="m-a">
               <img
-                src="/gallery-2024-atl/atl-107.jpg"
-                alt="Members raising the Somaliland flag on stage at the gala"
+                src="/gallery-2024-atl/atl-084.jpg"
+                alt="A member celebrating with the Somaliland flag at the gala"
                 loading="lazy"
               />
               <figcaption>One weekend a year, the whole diaspora is in one room.</figcaption>
