@@ -39,7 +39,6 @@ export default function OpEds() {
               alt="A crowd of people forming the shape of Somaliland"
               loading="lazy"
             />
-            <figcaption>Image credit: Edna Adan Maternity Hospital</figcaption>
           </Reveal>
           <Reveal className="article">
             <div className="k">Q1 Quarterly Analytical Op-Ed &middot; Economy</div>
