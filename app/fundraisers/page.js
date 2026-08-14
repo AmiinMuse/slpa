@@ -129,12 +129,6 @@ export default function Fundraisers() {
 
           {/* Eerigabo 2025 */}
           <Reveal className="article">
-            <img
-              src="/fundraisers/eerigabo-2025-flyer.png"
-              alt="Flyer for the 6th Annual SLPA Ramadan Fundraiser for Eerigabo"
-              className="article-thumb"
-              loading="lazy"
-            />
             <div className="k">Ramadan 2025 &middot; Sanaag Region</div>
             <h3>6th Annual SLPA Ramadan Fundraiser &mdash; Eerigabo</h3>
             <p>
