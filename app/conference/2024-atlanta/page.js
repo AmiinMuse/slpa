@@ -87,6 +87,61 @@ export default function AtlantaRecap() {
         </div>
       </section>
 
+      <section id="media">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <div className="eyebrow">Recap &amp; Media</div>
+            <h2>Take the weekend with you.</h2>
+            <p>
+              The full written recap and the video highlights &mdash; the
+              takeaways, action items, and moments worth revisiting.
+            </p>
+          </Reveal>
+          <Reveal className="impact-grid">
+            <div className="impact-card">
+              <h3>2024 Summit Recap Report</h3>
+              <p>
+                &ldquo;Somaliland Professionals in Unity Summit Recap&rdquo;
+                &mdash; a six-page report from the May 24&ndash;26 weekend, with
+                key takeaways and the action items that came out of the panels
+                and workshops.
+              </p>
+              <div className="btn-row" style={{ marginTop: "24px" }}>
+                <a
+                  className="btn btn-primary"
+                  href="/conference/2024-summit-recap.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download the recap (PDF)
+                </a>
+              </div>
+            </div>
+            <div className="impact-card">
+              <h3>Video Highlights</h3>
+              <p>
+                Relive the keynotes, panels, and cultural night on video. Full
+                event coverage from the Atlanta summit lives on SLPA&rsquo;s
+                YouTube channel &mdash; subscribe to catch new uploads.
+              </p>
+              <div className="btn-row" style={{ marginTop: "24px" }}>
+                <a
+                  className="btn btn-ghost"
+                  href="https://youtube.com/@myslpa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Watch the 2024 Atlanta highlights on YouTube
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: "14px", height: "14px" }}>
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <JoinBand />
     </>
   );
