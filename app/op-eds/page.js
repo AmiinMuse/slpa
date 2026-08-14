@@ -30,16 +30,6 @@ export default function OpEds() {
 
       <section className="section-sand">
         <div className="wrap">
-          <Reveal
-            className="photo-frame"
-            style={{ margin: "0 auto 48px", maxWidth: "560px" }}
-          >
-            <img
-              src="/op-eds/oped-hero.jpg"
-              alt="A crowd of people forming the shape of Somaliland"
-              loading="lazy"
-            />
-          </Reveal>
           <Reveal className="article">
             <div className="k">Q1 Quarterly Analytical Op-Ed &middot; Economy</div>
             <h3>
