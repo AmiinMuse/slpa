@@ -102,6 +102,87 @@ export default function Programs() {
         </div>
       </section>
 
+      <section id="intern-volunteer" className="section-sand">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <div className="eyebrow">Intern + Volunteer Program</div>
+            <h2>SLPA Summer Internship &amp; Volunteer Programs in Somaliland.</h2>
+          </Reveal>
+          <Reveal className="mentor-grid">
+            <div>
+              <p
+                style={{
+                  fontSize: "16px",
+                  lineHeight: 1.7,
+                  color: "rgba(35,38,31,0.7)",
+                  margin: 0,
+                }}
+              >
+                Many of us may have been back to Somaliland throughout the years
+                and may have even wanted to get involved. Due to a lack of
+                connection or network it may have been difficult. We are now
+                looking to connect our members visiting back home this summer to
+                opportunities in areas that interest them! SLPA is willing to
+                facilitate these opportunities whether you are a college student
+                looking for an internship opportunity while you are visiting or a
+                young professional willing to volunteer your time in your
+                respective areas of knowledge and expertise. Our goal at SLPA is
+                to create a platform or space for Somaliland professionals to
+                connect and collaborate here in the US as well as back home! If
+                you are looking to having a fulfilling and enriching experience
+                with our Summer Program please fill out our form of interest
+                below!
+              </p>
+              <div className="btn-row" style={{ marginTop: "28px" }}>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeF2vMjeB0gkCd2xOo6LXGubRpxLz51X7kLYgP6uBTZOJ20BQ/viewform?vc=0&amp;c=0&amp;w=1"
+                  className="btn btn-primary"
+                >
+                  Fill out the form of interest
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3 style={{ fontSize: "19px", marginBottom: "4px" }}>
+                SLPA Partners
+              </h3>
+              <p
+                style={{
+                  fontSize: "14px",
+                  lineHeight: 1.6,
+                  color: "rgba(35,38,31,0.6)",
+                  margin: "0 0 4px",
+                }}
+              >
+                The institutions and organizations we work with across
+                Somaliland and the diaspora.
+              </p>
+              <div className="city-tags">
+                <span>Gollis University</span>
+                <span>Harhub Innovation Center</span>
+                <span>Shaqadoon Organization</span>
+                <span>Pharo Foundation</span>
+                <span>Abaarso School</span>
+                <span>Hargeysa Cultural Center</span>
+                <span>Edna Aden Hospital</span>
+                <span>Ministry of Foreign Affairs</span>
+                <span>Ministry of Finance</span>
+                <span>Somaliland Diaspora Relations Office</span>
+                <span>Banfas School of Arts</span>
+                <span>Somaliland Intellectuals</span>
+                <span>Somaliland Sun</span>
+                <span>Somaliland Chronicle</span>
+                <span>Nagaad Network</span>
+                <span>UK-SL Alliance</span>
+                <span>Somaliland Canadian Professionals Forum</span>
+                <span>Canadian Somaliland Affairs Community</span>
+                <span>Association of Somaliland Community in Australia</span>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="section-soft">
         <div className="wrap">
           <Reveal className="section-head">
@@ -118,10 +199,7 @@ export default function Programs() {
                 with institutions like Gollis University, we&#39;re working to
                 reach universities across all six regions of Somaliland.
               </p>
-              <a
-                className="more"
-                href="https://myslpa.org/intern%2Bvolunteer-program-1"
-              >
+              <a className="more" href="#intern-volunteer">
                 Learn more{" "}
                 <svg
                   viewBox="0 0 24 24"
