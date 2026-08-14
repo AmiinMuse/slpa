@@ -51,7 +51,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://myslpa.org/fundraisers">Fundraisers</a>
+                <Link href="/fundraisers">Fundraisers</Link>
               </li>
               <li>
                 <a href="https://myslpa.org/donate">Donate</a>
