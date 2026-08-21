@@ -2,10 +2,78 @@ import Link from "next/link";
 import Reveal from "../components/Reveal";
 import JoinBand from "../components/JoinBand";
 import ConferenceSlideshow from "../components/ConferenceSlideshow";
+import Gallery from "../components/Gallery";
+import { REGIONAL_PHOTOS } from "./regionalPhotos";
 
 export const metadata = {
   title: "Conferences & Events | SLPA",
 };
+
+const REGIONAL_EVENTS = [
+  {
+    slug: "nyc",
+    n: "1st",
+    city: "New York City",
+    date: "September 28, 2024",
+    venue: "City College (CUNY) & NBHD Coffee Shop",
+    blurb:
+      "The stop that started the tour — 50+ members from across the NYC metro (NY, NJ, CT). Dr. Ali Yusuf Dualeh shared insights from his book on Somaliland’s history and 1980s New York; Amin Muuse (Northwestern) introduced the Takeoff Fund, a VC firm channeling diaspora investment home; the night closed with dinner and networking at NBHD Brûlée.",
+  },
+  {
+    slug: "columbus",
+    n: "2nd",
+    city: "Greater Columbus, OH",
+    date: "January 25, 2025",
+    venue: "Columbus Metropolitan Library",
+    blurb:
+      "75+ members from across Greater Columbus — longtime locals and new residents alike — carried the momentum from Atlanta into the Midwest.",
+  },
+  {
+    slug: "seattle",
+    n: "3rd",
+    city: "Seattle, WA",
+    date: "July 12, 2025",
+    venue: "Ballard Public Library",
+    blurb:
+      "The first SLPA event in the Pacific Northwest and the largest regional turnout yet — 125+ from Washington, Oregon, and British Columbia. Speakers included Dr. Jamal Gabobe (University of Washington), Khadar Nur (WA State Labor & Employment), Ahmed Ali, and Nura Adam.",
+  },
+  {
+    slug: "minneapolis",
+    n: "4th",
+    city: "Minneapolis, MN",
+    date: "August 9, 2025",
+    venue: "",
+    blurb:
+      "Members from across the Upper Midwest gathered for a day built around education and mentorship, with interactive roundtables tackling challenges facing both Minnesota and Somaliland.",
+  },
+  {
+    slug: "boston",
+    n: "5th",
+    city: "Boston, MA",
+    date: "December 2025",
+    venue: "",
+    blurb:
+      "70+ from across New England — Massachusetts, Maine, Connecticut, Rhode Island, and students from Vermont — for the first gathering of its kind in Boston since the early 1990s. Host Fahima Ali opened the evening and Sheikh Abdiqadir, Imam of New England’s largest mosque, gave the recitation; attendees represented Harvard, MIT, Yale, Tufts, Dartmouth, Cornell, and Columbia.",
+  },
+  {
+    slug: "dmv",
+    n: "6th",
+    city: "DMV — Fairfax, VA",
+    date: "February 2026",
+    venue: "Merten Hall, George Mason University",
+    blurb:
+      "A homecoming — the DMV is where SLPA began. Nearly 100 attendees gathered under the theme “Building Bridges,” with an open forum on education and workforce development, investing in agriculture, infrastructure and energy, and clearer legal pathways for diaspora investment.",
+  },
+  {
+    slug: "dallas",
+    n: "7th",
+    city: "Dallas, TX",
+    date: "April 18, 2026",
+    venue: "Embassy Suites, Dallas",
+    blurb:
+      "One of the largest yet — 140+ from Texas, Oklahoma, and Louisiana. Mohamoud Egal, founder of the Amoud Foundation, keynoted on unity and education; petroleum engineer Abdisamad Artan traced Somaliland’s oil and gas journey. Roundtables and a career panel spanned AI, engineering, technology, and medicine.",
+  },
+];
 
 export default function Conference() {
   return (
@@ -87,64 +155,36 @@ export default function Conference() {
             <h2>Between conferences, SLPA comes to your city.</h2>
             <p>
               Since the Atlanta conference, a traveling series of regional
-              forums has carried the momentum across the country &mdash; a day
-              of keynotes, roundtables, mentorship, and networking, hosted by
-              local SLPA chapters.
+              forums has carried the momentum across the country &mdash; seven
+              stops and counting, from New York to Dallas. Each is a day of
+              keynotes, roundtables, mentorship, and networking, hosted by
+              local members. Tap any photo to view it full-size.
             </p>
           </Reveal>
-          <Reveal className="article">
-            <div className="k">Latest Stop &middot; April 18, 2026</div>
-            <h3>Dallas Regional Forum</h3>
-            <div className="byline">
-              Embassy Suites, Dallas, TX &middot; 140+ attendees from Texas,
-              Oklahoma &amp; Louisiana
-            </div>
-            <p>
-              The seventh stop on the regional series &mdash; and one of the
-              largest yet. Mohamoud Egal, founder of Amoud Foundation, opened
-              with a keynote on unity and education; petroleum engineer
-              Abdisamad Artan traced Somaliland&rsquo;s oil and gas journey
-              from the 1960s to today. Roundtables tackled regional
-              engagement, mentorship, and how diaspora professionals can
-              contribute to Somaliland&rsquo;s development, alongside a career
-              panel spanning AI, engineering, technology, and medicine.
-            </p>
+          <Gallery
+            chapters={REGIONAL_EVENTS.map((e) => ({
+              title: `${e.n} Stop · ${e.city}`,
+              alt: `SLPA regional event — ${e.city}`,
+              note: `${e.date}${e.venue ? " · " + e.venue : ""}. ${e.blurb}`,
+              photos: REGIONAL_PHOTOS[e.slug],
+            }))}
+          />
+          <Reveal className="success-note" style={{ marginTop: "40px" }}>
+            <strong>Want the next stop in your city?</strong> Follow{" "}
             <a
-              className="more"
-              href="https://www.instagram.com/myslpa_/p/DYaVmKMFQlj/"
+              href="https://www.instagram.com/myslpa_/"
+              style={{ color: "var(--olive)", fontWeight: 600 }}
             >
-              See the recap on Instagram{" "}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </a>
-          </Reveal>
-          <Reveal>
-            <div className="city-tags">
-              <span>New York City</span>
-              <span>Greater Columbus</span>
-              <span>Boston</span>
-              <span>Minnesota</span>
-              <span>Seattle</span>
-              <span>Dallas</span>
-            </div>
-            <div className="success-note" style={{ marginTop: "24px" }}>
-              <strong>Want the next stop in your city?</strong> Follow{" "}
-              <a
-                href="https://www.instagram.com/myslpa_/"
-                style={{ color: "var(--olive)", fontWeight: 600 }}
-              >
-                @myslpa_
-              </a>{" "}
-              for announcements, or reach out at{" "}
-              <a
-                href="mailto:myslpa.info@gmail.com"
-                style={{ color: "var(--olive)", fontWeight: 600 }}
-              >
-                myslpa.info@gmail.com
-              </a>{" "}
-              to help organize one.
-            </div>
+              @myslpa_
+            </a>{" "}
+            for announcements, or reach out at{" "}
+            <a
+              href="mailto:myslpa.info@gmail.com"
+              style={{ color: "var(--olive)", fontWeight: 600 }}
+            >
+              myslpa.info@gmail.com
+            </a>{" "}
+            to help organize one.
           </Reveal>
         </div>
       </section>
