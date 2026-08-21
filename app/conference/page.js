@@ -2,7 +2,7 @@ import Link from "next/link";
 import Reveal from "../components/Reveal";
 import JoinBand from "../components/JoinBand";
 import ConferenceSlideshow from "../components/ConferenceSlideshow";
-import Gallery from "../components/Gallery";
+import RegionalEvents from "../components/RegionalEvents";
 import { REGIONAL_PHOTOS } from "./regionalPhotos";
 
 export const metadata = {
@@ -156,19 +156,18 @@ export default function Conference() {
             <p>
               Since the Atlanta conference, a traveling series of regional
               forums has carried the momentum across the country &mdash; seven
-              stops and counting, from New York to Dallas. Each is a day of
-              keynotes, roundtables, mentorship, and networking, hosted by
-              local members. Tap any photo to view it full-size.
+              stops and counting, from New York to Dallas. Follow the tour
+              below; open any stop to page through its full photo set.
             </p>
           </Reveal>
-          <Gallery
-            chapters={REGIONAL_EVENTS.map((e) => ({
-              title: `${e.n} Stop · ${e.city}`,
-              alt: `SLPA regional event — ${e.city}`,
-              note: `${e.date}${e.venue ? " · " + e.venue : ""}. ${e.blurb}`,
-              photos: REGIONAL_PHOTOS[e.slug],
-            }))}
-          />
+          <Reveal>
+            <RegionalEvents
+              events={REGIONAL_EVENTS.map((e) => ({
+                ...e,
+                photos: REGIONAL_PHOTOS[e.slug],
+              }))}
+            />
+          </Reveal>
           <Reveal className="success-note" style={{ marginTop: "40px" }}>
             <strong>Want the next stop in your city?</strong> Follow{" "}
             <a
