@@ -284,8 +284,9 @@ footer p.mission{font-size:14px;line-height:1.65;max-width:34ch;color:rgba(35,38
 .tour-stop:nth-child(even) .tour-media{order:2;}
 .tour-media{position:relative;}
 .tour-hero{display:block;width:100%;padding:10px;background:var(--paper);border:1px solid var(--line);cursor:zoom-in;position:relative;box-shadow:0 26px 60px -34px rgba(46,54,39,0.5);transition:transform .3s ease,box-shadow .3s ease;}
-.tour-hero img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+.tour-hero img{width:100%;height:auto;display:block;}
 .tour-hero:hover{transform:translateY(-3px);box-shadow:0 32px 66px -32px rgba(46,54,39,0.55);}
+.tour-media.is-portrait .tour-hero,.tour-media.is-portrait .tour-thumbs{max-width:400px;margin-left:auto;margin-right:auto;}
 .tour-tag{position:absolute;left:-6px;bottom:24px;background:var(--olive-deep);color:var(--paper);padding:11px 18px;box-shadow:0 16px 34px -18px rgba(46,54,39,0.7);}
 .tour-tag .k{display:block;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;font-weight:600;color:rgba(255,255,255,0.6);}
 .tour-tag .t{display:block;font-family:var(--font-fraunces),serif;font-style:italic;font-size:18px;margin-top:3px;color:var(--paper);}
