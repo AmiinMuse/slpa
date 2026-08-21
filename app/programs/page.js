@@ -220,7 +220,7 @@ export default function Programs() {
                 published across Somaliland journals to reach the stakeholders
                 who can drive change.
               </p>
-              <Link className="more" href="/op-eds">
+              <Link className="more" href="/news">
                 Read the op-eds{" "}
                 <svg
                   viewBox="0 0 24 24"
