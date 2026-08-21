@@ -47,16 +47,21 @@ export default function RegionalEvents({ events }) {
     <>
       <ol className="tour">
         {events.map((e, i) => {
-          const hero = e.photos[0];
-          const thumbs = e.photos.slice(1, 4);
-          const extra = e.photos.length - 4;
+          const ci = Math.min((e.cover || 1) - 1, e.photos.length - 1);
+          const hero = e.photos[ci];
+          const portrait = hero.height > hero.width;
+          const rest = e.photos
+            .map((p, idx) => ({ p, idx }))
+            .filter((o) => o.idx !== ci);
+          const thumbs = rest.slice(0, 3);
+          const extra = rest.length - thumbs.length;
           return (
             <li className="tour-stop" key={e.slug}>
-              <div className="tour-media">
+              <div className={`tour-media${portrait ? " is-portrait" : ""}`}>
                 <button
                   type="button"
                   className="tour-hero"
-                  onClick={() => setLb({ e: i, p: 0 })}
+                  onClick={() => setLb({ e: i, p: ci })}
                   aria-label={`View photos from ${e.city}`}
                 >
                   <img
@@ -73,21 +78,21 @@ export default function RegionalEvents({ events }) {
                 </button>
                 {thumbs.length > 0 && (
                   <div className="tour-thumbs">
-                    {thumbs.map((p, j) => (
+                    {thumbs.map((o) => (
                       <button
                         type="button"
-                        key={p.src}
-                        onClick={() => setLb({ e: i, p: j + 1 })}
-                        aria-label={`View photo ${j + 2} from ${e.city}`}
+                        key={o.p.src}
+                        onClick={() => setLb({ e: i, p: o.idx })}
+                        aria-label={`View a photo from ${e.city}`}
                       >
-                        <img src={p.src} alt="" loading="lazy" />
+                        <img src={o.p.src} alt="" loading="lazy" />
                       </button>
                     ))}
                     {extra > 0 && (
                       <button
                         type="button"
                         className="tour-more-thumb"
-                        onClick={() => setLb({ e: i, p: 4 })}
+                        onClick={() => setLb({ e: i, p: rest[3].idx })}
                         aria-label={`View all ${e.photos.length} photos from ${e.city}`}
                       >
                         +{extra}

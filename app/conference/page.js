@@ -58,6 +58,7 @@ const REGIONAL_EVENTS = [
   {
     slug: "dmv",
     n: "6th",
+    cover: 2,
     city: "DMV — Fairfax, VA",
     date: "February 2026",
     venue: "Merten Hall, George Mason University",
