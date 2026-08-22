@@ -28,26 +28,20 @@ export default function Fundraisers() {
         </div>
       </section>
 
-      {/* Current campaign — featured */}
+      {/* Evergreen give feature */}
       <section className="section-olive">
         <div className="wrap">
-          <Reveal className="section-head">
-            <div className="eyebrow">Current Campaign &middot; Ramadan 2026</div>
-            <h2>2026 Ramadan Fundraiser &mdash; Caynaba Hospital</h2>
-          </Reveal>
           <Reveal className="donate-box">
             <div>
               <div className="eyebrow" style={{ marginBottom: "14px" }}>
-                7th Annual Ramadan Fundraiser
+                Support SLPA
               </div>
-              <h2>Support Caynaba Hospital this Ramadan.</h2>
+              <h2>Every Ramadan, we run a community-wide campaign.</h2>
               <p>
-                SLPA&rsquo;s 2026 Ramadan fundraiser is raising funds for
-                Caynaba Hospital in Somaliland &mdash; strengthening care for
-                the families and community it serves. Continuing our tradition
-                of a community-wide Ramadan campaign every year, even a small
-                gift goes a long way. Give, share, and help us make this Ramadan
-                count.
+                Each year SLPA rallies its members and the wider diaspora behind
+                a cause in Somaliland &mdash; from hospitals and schools to
+                emergency relief. Your gift keeps that tradition going, and 100%
+                goes toward the effort.
               </p>
             </div>
             <div className="donate-panel">
@@ -57,16 +51,16 @@ export default function Fundraisers() {
                 className="donate-mark"
                 style={{ marginLeft: "auto", marginRight: "auto" }}
               />
-              <h3>Donate to Caynaba Hospital.</h3>
+              <h3>Give to SLPA.</h3>
               <p className="small">
-                100% goes toward the 2026 Ramadan relief effort. Give securely
-                by card or your preferred method.
+                Support our fundraising efforts securely by card or your
+                preferred method.
               </p>
               <a
                 href="https://www.qrcodechimp.com/page/slpadonation"
                 className="btn btn-light"
               >
-                Donate Now
+                Donate
               </a>
             </div>
           </Reveal>
@@ -125,6 +119,23 @@ export default function Fundraisers() {
           <Reveal className="section-head">
             <div className="eyebrow">Campaign History</div>
             <h2>Every fundraiser, newest first.</h2>
+          </Reveal>
+
+          {/* Caynaba / Ainabo 2026 */}
+          <Reveal className="article">
+            <div className="k">Ramadan 2026 &middot; Sool Region</div>
+            <h3>7th Annual SLPA Ramadan Fundraiser &mdash; Ainabo Hospital</h3>
+            <p>
+              Our 7th Annual Ramadan Fundraiser supported the Ainabo (Caynaba)
+              International Hospital in the Sool region &mdash; strengthening
+              care for the families and community it serves.
+            </p>
+            <p>
+              <strong>We surpassed our goal.</strong> With this campaign, our
+              Ramadan fundraising officially reached all six regions of
+              Somaliland. Thank you to everyone who gave and shared to make it
+              possible.
+            </p>
           </Reveal>
 
           {/* Eerigabo 2025 */}
@@ -322,13 +333,14 @@ export default function Fundraisers() {
           </Reveal>
 
           <Reveal className="success-note">
-            <strong>Want to support the current campaign?</strong> Our 2026
-            Ramadan fundraiser for Caynaba Hospital is live &mdash;{" "}
+            <strong>Want to support the next campaign?</strong> SLPA runs a
+            community-wide Ramadan fundraiser every year &mdash; you can give
+            any time at{" "}
             <a
               href="https://www.qrcodechimp.com/page/slpadonation"
               style={{ color: "var(--olive)", fontWeight: 600 }}
             >
-              donate here
+              our donation page
             </a>
             . Questions or partnership ideas? Reach us at{" "}
             <a
