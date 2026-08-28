@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function JoinBand() {
   return (
     <section className="join-band">
@@ -10,9 +12,9 @@ export default function JoinBand() {
             Registration takes two minutes.
           </p>
         </div>
-        <a href="https://forms.gle/je2pJbUCcXUVd5FQA" className="btn btn-light">
+        <Link href="/join" className="btn btn-light">
           Register today
-        </a>
+        </Link>
       </div>
     </section>
   );
