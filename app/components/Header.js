@@ -52,9 +52,13 @@ export default function Header() {
               </li>
             ))}
             <li>
-              <a href="https://forms.gle/je2pJbUCcXUVd5FQA" className="nav-cta">
+              <Link
+                href="/join"
+                className="nav-cta"
+                onClick={() => setOpen(false)}
+              >
                 Become a Member
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

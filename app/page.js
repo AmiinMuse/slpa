@@ -22,12 +22,9 @@ export default function Home() {
                 Somaliland today.
               </p>
               <div className="btn-row">
-                <a
-                  href="https://forms.gle/je2pJbUCcXUVd5FQA"
-                  className="btn btn-primary"
-                >
+                <Link href="/join" className="btn btn-primary">
                   Become a member
-                </a>
+                </Link>
                 <Link href="/conference" className="btn btn-ghost">
                   Explore the annual conference
                 </Link>
