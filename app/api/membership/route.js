@@ -6,13 +6,13 @@ import {
   REQUIRED_FIELDS,
   isEmail,
 } from "../../../lib/membership";
-import { isSheetConfigured, postToSheet } from "../../../lib/sheets";
+import { isDbConfigured, saveRegistration } from "../../../lib/db";
 
-// Store membership registrations in the SLPA Google Sheet. POST only.
+// Store membership registrations in Postgres. POST only.
 // No `runtime` export: the Edge Runtime is deprecated in Next 16 and 'nodejs'
 // is the default (node_modules/next/dist/docs/.../route-segment-config/runtime.md).
 
-// Trim, coerce to string, and cap length so a single field can't bloat a sheet row.
+// Trim, coerce to string, and cap length so a single field can't bloat a database row.
 function clean(value, max) {
   return String(value ?? "")
     .trim()
@@ -69,7 +69,7 @@ export async function POST(request) {
   }
 
   // The free-text box is required when Other is chosen, and ignored otherwise —
-  // so a stale value from a changed mind never reaches the sheet.
+  // so a stale value from a changed mind never reaches the database.
   if (registration.contactPref === OTHER) {
     if (!registration.contactPrefOther) {
       return fail("Please tell us your preferred way to be contacted.", [
@@ -91,9 +91,9 @@ export async function POST(request) {
   }
 
   // Never accept a registration we can't store.
-  if (!isSheetConfigured()) {
+  if (!isDbConfigured()) {
     console.error(
-      "APPS_SCRIPT_URL is not set — refusing the registration. See docs/MEMBERSHIP-FORM.md §6."
+      "DATABASE_URL is not set — refusing the registration. See docs/MEMBERSHIP-FORM.md §6."
     );
     return Response.json(
       {
@@ -105,7 +105,7 @@ export async function POST(request) {
   }
 
   try {
-    await postToSheet(registration);
+    await saveRegistration(registration);
   } catch (err) {
     console.error("membership registration failed:", err);
     return Response.json(

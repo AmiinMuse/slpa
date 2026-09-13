@@ -1,6 +1,10 @@
 # Membership Registration Form — Implementation Notes
 
-Status: implemented
+Status: implemented — storage is Postgres (Netlify Database), verified end-to-end
+against a real database (schema applied, a test submission written and read back,
+honeypot and validation checked). The earlier Google Sheets / Apps Script backend
+(`lib/sheets.js`, `scripts/apps-script/Code.gs`) has been removed; it was never
+connected in production — `APPS_SCRIPT_URL` was never set.
 Scope: replaces the external Google Form with a native `/join` page
 Related: [DESIGN.md](./DESIGN.md) §7 — closes the "Registration/RSVP" open question
 
@@ -11,7 +15,7 @@ Google Form (`https://forms.gle/je2pJbUCcXUVd5FQA`). That hand-off dropped the v
 onto an unbranded Google page at the single most important moment on the site.
 
 Registration now lives at `/join`, built from the site's own design tokens, and
-submissions land in a Google Sheet the board already has access to.
+submissions land in a Postgres database.
 
 The old Google Form is **still live and untouched** — it is simply no longer linked from
 the site, so links already sitting in past emails and social posts keep working.
@@ -49,7 +53,7 @@ entry.147332964    Best contact number         entry.888422012    How did you he
 ### What changed on the way across
 
 - **Name is now two inputs** (first, last) instead of one combined field — cleaner data
-  for greetings and mail-merges. The sheet stores both, plus a joined `full_name`.
+  for greetings and mail-merges.
 - Everything else mirrors the original exactly, including the free-text "Other" option on
   questions 5 and 6.
 
@@ -59,26 +63,50 @@ entry.147332964    Best contact number         entry.888422012    How did you he
 MembershipForm (client component)
    └─ POST /api/membership                  same-origin JSON
         app/api/membership/route.js         honeypot → validate → cap field lengths
-          └─ lib/sheets.js                  POST JSON + shared token
-               └─ Apps Script Web App       verify token → append row → auto-reply email
-                    └─ Google Sheet         one row per registration
+          └─ lib/db.js                      parameterized INSERT
+               └─ Postgres (Netlify DB)     one row per registration
 ```
 
-The API route is a deliberate server-side proxy rather than having the browser post
-straight at Apps Script. It:
+The API route is a deliberate server-side proxy rather than having the browser talk to
+the database directly. It:
 
-- keeps the Apps Script URL and shared token out of the client bundle,
-- sidesteps CORS entirely (the Apps Script `/exec` URL 302-redirects to
-  `script.googleusercontent.com`; a server-side `fetch` follows that transparently,
-  while a browser request would need Google's permissive CORS headers), and
-- keeps the storage backend swappable — only `lib/sheets.js` would change.
+- keeps the database connection string out of the client bundle,
+- runs the same field-length caps and required-field checks regardless of what the
+  client sent, and
+- keeps the storage backend swappable — only `lib/db.js` would change.
 
-### Why a Google Sheet
+### Why Postgres, and why Netlify Database specifically
 
-It is free with no cap, keeps data permanently, is officially supported, and the board
-already lives in Google Workspace. The hosted form services (Web3Forms, Formspree, and
-similar) were rejected for a membership roster: their free tiers cap at 50–250
-submissions per month **and delete submission history after 30 days**.
+A relational table is a better fit than a spreadsheet API once there's real
+validation and a fixed schema, and it removes Apps Script entirely — no more Code.gs
+version drift between the pasted script and this repo, no `/exec` URL redirect/CORS
+workaround, no separate Google account holding write access to the sheet.
+
+Netlify Database was picked over provisioning Neon (or another Postgres host)
+directly because the org may consolidate other tooling on Netlify later, and
+Netlify Database *is* Neon Postgres underneath — provisioning through Netlify's
+dashboard is free (see §6) and hands back an ordinary Postgres connection string,
+with no lock-in beyond that.
+
+**This site keeps deploying on Vercel.** Netlify Database's headline features —
+automatic migrations on every deploy, and a fresh database branch per PR preview —
+are wired into *Netlify's own* build pipeline and don't apply here. What we get
+instead is exactly what any other managed Postgres host would give: a connection
+string, used from `app/api/membership/route.js` with the plain `pg` client (see
+§4). Two consequences:
+
+- **Schema changes are manual.** There is no `netlify/database/migrations/`
+  auto-apply step running against a Vercel deploy. A schema change means running
+  the SQL by hand once (Neon's SQL editor, or `psql "$DATABASE_URL"`) before
+  deploying the code that depends on it.
+- **No `@netlify/database` package.** That package's `getDatabase()` helper
+  auto-detects Netlify Functions/Edge Functions and optimizes for them; it adds
+  nothing on Vercel. `lib/db.js` uses `pg.Pool` directly against the connection
+  string instead.
+
+Free tier is more than enough for this project's volume: 5 GB storage, 48 database
+compute units per billing period, 5 GB bandwidth per period. Storage itself is free
+until at least mid-2026 per Netlify's current pricing.
 
 ## 4. Files
 
@@ -86,53 +114,81 @@ submissions per month **and delete submission history after 30 days**.
 |---|---|
 | `app/join/page.js` | The `/join` page — hero + "Why join" list + the form |
 | `app/components/MembershipForm.js` | Client component: fields, validation, states |
-| `app/api/membership/route.js` | Validates, spam-filters, forwards to the sheet |
+| `app/api/membership/route.js` | Validates, spam-filters, forwards to the database |
 | `lib/membership.js` | Choice options, length caps, email check — shared by form and API so they cannot drift |
-| `lib/sheets.js` | `postToSheet()` — the only file that knows about Apps Script |
-| `scripts/apps-script/Code.gs` | Apps Script source, version-controlled here |
-| `.env.example` | Documents the two required environment variables |
+| `lib/db.js` | `saveRegistration()` / `isDbConfigured()` — the only file that knows about Postgres, holds the pooled `pg.Pool` |
+| `scripts/db/schema.sql` | The `registrations` table definition — run once by hand, see §5 |
+| `.env.example` | Documents the required `DATABASE_URL` |
 
-## 5. Sheet columns
+`lib/sheets.js` and `scripts/apps-script/Code.gs` (the Google Sheets / Apps Script
+backend) have been removed now that the database path above is verified working
+end-to-end.
 
-`appendRow` writes in exactly this order. If you add a column, add it to **both**
-`Code.gs` and the sheet header row.
+## 5. Database schema
 
+One table, `registrations`, columns in the same order as the old sheet so nothing is
+lost in translation:
+
+```sql
+create table registrations (
+  id                 bigint generated always as identity primary key,
+  created_at         timestamptz not null default now(),
+  first_name         text not null,
+  last_name          text not null,
+  email              text not null,
+  location           text not null,
+  phone              text not null,
+  contact_pref       text not null,
+  contact_pref_other text not null default '',
+  committee          text not null,
+  committee_other    text not null default '',
+  profession         text not null,
+  heard_about        text not null
+);
 ```
-timestamp · first_name · last_name · full_name · email · location · phone ·
-contact_pref · contact_pref_other · committee_interest · committee_other ·
-profession · heard_about · source · status
-```
 
-- `source` is always `website`, so if old Google Form responses are ever imported into
-  the same sheet the two are still distinguishable.
-- `status` starts as `new` — free for the board to use as a triage column
-  (`new` → `contacted` → `member`).
+- No `full_name` column — trivial to derive with `first_name || ' ' || last_name` in a
+  query, not worth storing and keeping in sync.
+- No `source` or `status` columns from the old sheet: `source` existed to distinguish
+  imported Google Form rows from website rows in one shared sheet, which doesn't apply
+  to a dedicated table; `status` (triage state) can be added later if the board actually
+  wants a workflow column — see §8.
 
 ## 6. One-time setup (board / maintainer)
 
-1. Open the **existing** Google Form responses spreadsheet — using it keeps the whole
-   roster in one file. You do not need to create the tab by hand: on its first
-   registration the script creates a `Website Registrations` tab, writes the 15 headers
-   from §5, and freezes the header row. Create it yourself only if you want the columns
-   in place before the first sign-up.
-2. **Extensions → Apps Script.** Delete the placeholder, paste the contents of
-   `scripts/apps-script/Code.gs`, and set `TOKEN` to a long random string.
-3. **Deploy → New deployment → Web app.** Set *Execute as* **Me**, *Who has access*
-   **Anyone**. Authorize when prompted — the script needs permission to edit the sheet
-   and to send mail as you. Copy the resulting `.../exec` URL.
-4. Locally: `cp .env.example .env.local`, then fill in `APPS_SCRIPT_URL` (the `/exec`
-   URL) and `APPS_SCRIPT_TOKEN` (the same random string from step 2).
-5. In Vercel → Project → Settings → Environment Variables, add both variables for
-   Production and Preview, then redeploy.
+This repo is shared and the person doing this setup may not own the GitHub repo or
+have permission to install Netlify's GitHub App on it. That's fine — **the database
+does not need to be attached to a Netlify site that deploys this repo.** Use a
+manually-created, Git-disconnected Netlify site purely as a place to hang the
+database off of; the app keeps deploying on Vercel exactly as it does today.
 
-Auto-reply emails send from whichever Google account deploys the script. `MailApp` allows
-100 recipients per day on a consumer Gmail account — far above expected volume.
+1. Sign up / log in at [netlify.com](https://netlify.com).
+2. **Add new site → Deploy manually**, dragging in the project folder (not "Import an
+   existing project" — that's the flow that needs GitHub repo access). This creates a
+   site with no Git connection, which needs no repo permissions at all. The deploy
+   itself is thrown away; only the site record matters, as a place to hang a database.
+3. Open that site → left sidebar → **Data & Storage → Database** → create/enable a
+   database. This is the same Neon-backed Postgres described in §3.
+4. Click into the **production** branch → scroll to **Connect** → reveal and copy the
+   **Read and write** connection string (there's a separate **Read-only** one; don't
+   use that for the app, it can't INSERT). The site also exposes this as an
+   environment variable named `NETLIFY_DB_URL`, but that name is only meaningful on
+   *Netlify's* side — this app doesn't read it by that name, so it's the value you
+   need, not the variable.
+5. Locally: `cp .env.example .env.local`, then set `DATABASE_URL` to that value.
+6. Create the `registrations` table: `psql "$DATABASE_URL" -f scripts/db/schema.sql`.
+   The dashboard's own "View and edit data" panel on that same branch page has a SQL
+   console, but it's **read-only** — it'll refuse any `CREATE TABLE`/`INSERT`/etc. with
+   "Cannot run modification statements in read-only mode." It's fine for inspecting
+   rows later; `psql` (or any Postgres client) with the read/write string is what
+   actually runs DDL.
+7. In Vercel → Project → Settings → Environment Variables, add `DATABASE_URL` (same
+   value) for Production and Preview, then redeploy.
 
-> **Re-deploying after editing `Code.gs`:** use **Deploy → Manage deployments → edit →
-> Version: New version**. Creating a brand-new deployment issues a *different* `/exec`
-> URL, which would need updating in `.env.local` and Vercel.
+No Netlify CLI step is required — everything above is done from the Netlify dashboard
+plus a local `psql`, so nothing touches this repo's GitHub permissions.
 
-### If the environment variables are missing
+### If the environment variable is missing
 
 `/api/membership` returns HTTP 503 and the form shows a message pointing at the Google
 Form, rather than pretending the submission succeeded. A misconfigured deploy must never
@@ -154,10 +210,15 @@ application code.
 
 ## 8. Deliberately not built
 
-- **Board notification per signup** — Google Sheets' own notification rules
-  (*Tools → Notification settings*) do this with no code.
-- **Duplicate-email detection** — duplicates currently append as normal rows.
-- **An in-site admin view** of registrations. The sheet is the admin view.
+- **Board notification per signup** — worth revisiting now that there's no Google
+  Sheet notification rule to lean on; not built yet.
+- **Duplicate-email detection** — duplicates currently insert as normal rows.
+- **An in-site admin view** of registrations. Nobody can casually browse the table the
+  way they could a sheet; querying it (via Neon's dashboard SQL editor, or `psql`) is
+  the interim answer. An authenticated `/admin` page or CSV export is a reasonable
+  follow-up once the write path itself is proven, not part of this change.
+- **Automated migrations** — one table, changed rarely, run by hand (§3) rather than
+  standing up migration tooling that fights against staying on Vercel.
 - **Mentorship sign-up** still points at SurveyMonkey
   (`app/contact/page.js`, `app/components/Footer.js`). Same class of problem, separate
   change.
