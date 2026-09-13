@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "../components/Reveal";
 import JoinBand from "../components/JoinBand";
 import SocialRow from "../components/SocialRow";
@@ -36,9 +37,9 @@ export default function Contact() {
                 </li>
                 <li>
                   <strong>Membership</strong>
-                  <a href="https://forms.gle/je2pJbUCcXUVd5FQA">
+                  <Link href="/join">
                     Register to become an SLPA member
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <strong>Mentorship</strong>

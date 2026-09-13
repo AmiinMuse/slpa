@@ -3,6 +3,7 @@
   --ink:#23261F; --paper:#FFFFFF; --paper-soft:#FAF9F6; --bg:#FBFAF6;
   --gold:#B4894A; --gold-tint:#F1E7D3;
   --line:rgba(35,38,31,0.12); --line-light:rgba(255,255,255,0.18); --max:1120px;
+  --error:#8E3B2F;
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -206,6 +207,23 @@ form.card{border:1px solid var(--line);background:var(--paper);padding:38px 36px
 .field input,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:2px;font-family:var(--font-inter),sans-serif;font-size:15px;color:var(--ink);background:var(--paper-soft);}
 .field input:focus,.field textarea:focus{outline:2px solid var(--olive);outline-offset:0;border-color:transparent;}
 .form-note{font-size:12.5px;color:rgba(35,38,31,0.5);margin-top:14px;line-height:1.5;}
+
+/* Membership form: radio groups, paired fields, inline errors (app/join) */
+fieldset.field{border:0;margin:0 0 20px;padding:0;min-width:0;}
+fieldset.field legend{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(35,38,31,0.55);margin-bottom:8px;padding:0;line-height:1.45;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.choices{display:grid;gap:8px;}
+.choice{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border:1px solid var(--line);border-radius:2px;background:var(--paper-soft);font-size:14.5px;line-height:1.45;cursor:pointer;transition:border-color .2s ease,background .2s ease;}
+.choice:hover{border-color:var(--olive);}
+.choice:has(input:checked){border-color:var(--olive);background:var(--olive-tint);}
+.choice:focus-within{outline:2px solid var(--olive);outline-offset:1px;}
+.choice input{width:auto;flex-shrink:0;margin:3px 0 0;accent-color:var(--olive);}
+.choice-other{margin-top:10px;}
+.form-error{font-size:12.5px;color:var(--error);margin:8px 0 0;line-height:1.45;}
+.form-error-block{margin-top:14px;}
+.field input[aria-invalid="true"],.field textarea[aria-invalid="true"],.choices[aria-invalid="true"] .choice{border-color:var(--error);}
+.honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+@media (max-width:520px){.field-row{grid-template-columns:1fr;gap:0;}}
 
 footer{padding-top:72px;background-color:var(--paper-soft);background-image:radial-gradient(rgba(82,94,68,0.06) 0.6px,transparent 0.8px);background-size:18px 18px;border-top:1px solid var(--line);}
 .footer-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;}

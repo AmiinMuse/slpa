@@ -43,7 +43,7 @@ export default function Footer() {
             <h4>Get Involved</h4>
             <ul className="foot-links">
               <li>
-                <a href="https://forms.gle/je2pJbUCcXUVd5FQA">Become a Member</a>
+                <Link href="/join">Become a Member</Link>
               </li>
               <li>
                 <a href="https://www.surveymonkey.com/r/C65NVND">
