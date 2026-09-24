@@ -26,16 +26,16 @@ export default function Footer() {
             <h4>Explore</h4>
             <ul className="foot-links">
               <li>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
                 <Link href="/conference">Annual Conference</Link>
               </li>
               <li>
                 <Link href="/programs">Programs</Link>
               </li>
               <li>
-                <Link href="/op-eds">Op-Eds</Link>
-              </li>
-              <li>
-                <Link href="/updates">SLPA Updates</Link>
+                <Link href="/news">News</Link>
               </li>
             </ul>
           </div>

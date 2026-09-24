@@ -72,63 +72,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="section-olive">
+      <section id="who-we-are" className="section-olive">
         <div className="wrap">
-          <Reveal className="section-head">
+          <Reveal className="section-head" style={{ marginBottom: 0 }}>
             <div className="eyebrow">Who We Are</div>
-            <h2>Three ideas hold this organization together.</h2>
+            <h2>A space to collaborate, mentor, and advocate.</h2>
             <p>
               SLPA exists to close the distance &mdash; between
               Somaliland-Americans scattered across the country, and between our
-              diaspora and the professionals building Somaliland today.
+              diaspora and the professionals building Somaliland today. A
+              501(c)(3) nonprofit, founded in 2018.
             </p>
-          </Reveal>
-          <Reveal className="pillars">
-            <div className="pillar">
-              <h3>What We Do</h3>
-              <ul>
-                <li>A U.S.-based association for Somaliland professionals.</li>
-                <li>
-                  Partnering with organizations to elevate issues facing our
-                  community.
-                </li>
-                <li>
-                  Linking Somaliland-American and Somaliland-based
-                  professionals.
-                </li>
-                <li>
-                  Using technology to connect forward-thinking
-                  Somaliland-Americans.
-                </li>
-              </ul>
-            </div>
-            <div className="pillar">
-              <h3>Goals &amp; Vision</h3>
-              <ul>
-                <li>Working with the Somaliland Mission in DC for our community.</li>
-                <li>Hosting annual events that spark breakthrough ideas.</li>
-                <li>Supporting self-sustaining projects inside Somaliland.</li>
-                <li>
-                  Promoting Somaliland&#39;s history and right to
-                  self-determination.
-                </li>
-                <li>Displaying the distinct cultural heritage of Somaliland.</li>
-              </ul>
-            </div>
-            <div className="pillar">
-              <h3>Why Now?</h3>
-              <ul>
-                <li>Our community&#39;s efforts have long been disconnected.</li>
-                <li>
-                  Somaliland-Americans are spread thin across every region.
-                </li>
-                <li>
-                  Few dedicated advocates are advancing Somaliland&#39;s vision.
-                </li>
-                <li>
-                  Mentorship and career networks remain few and far between.
-                </li>
-              </ul>
+            <div className="btn-row" style={{ marginTop: "28px" }}>
+              <Link href="/about" className="btn btn-ghost">
+                About SLPA
+              </Link>
             </div>
           </Reveal>
         </div>

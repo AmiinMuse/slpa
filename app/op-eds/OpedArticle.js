@@ -70,8 +70,8 @@ export default function OpedArticle({
           <h1>{title}</h1>
           {meta ? <p className="lede">{meta}</p> : null}
           <div className="btn-row">
-            <Link href="/op-eds" className="btn btn-outline-light">
-              All op-eds &amp; blogs
+            <Link href="/news" className="btn btn-outline-light">
+              All news
             </Link>
           </div>
         </div>
