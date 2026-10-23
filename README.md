@@ -19,3 +19,7 @@ The site runs at http://localhost:3000.
 - `public/logo-mark.png` / `public/logo-mark-light.png` — SLPA logo marks (header/footer, donate panel)
 - `docs/DESIGN.md` — design notes
 - `docs/slpa-site/` — static HTML design reference the site is built from
+
+## Deployment
+
+Hosted on Netlify (custom domain `myslpa.org`). Netlify detects Next.js and builds with `npm run build`; the Node version comes from `.nvmrc`. The local `.netlify/` folder created by the Netlify CLI is gitignored.

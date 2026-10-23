@@ -1,4 +1,4 @@
-// Auto-generated from public/regional/ — regional-event carousel photos
+// Regional-event carousel photos (files in public/regional/<city>/). Keep width/height accurate.
 export const REGIONAL_PHOTOS = {
   nyc: [
     { src: "/regional/nyc/nyc-01.jpg", width: 1200, height: 900 },

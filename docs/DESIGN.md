@@ -98,7 +98,7 @@ Building static-first, one page at a time:
 
 - **Next.js** (App Router, JS, plain CSS) — already scaffolded in this repo ([PR #1](https://github.com/AmiinMuse/slpa/pull/1)).
 - **No CMS/backend yet** — all content hardcoded in the repo (JS/JSON) for phase 1. Non-technical volunteers edit via a CMS in a later phase once static pages are solid.
-- **Hosting:** Vercel free tier, custom domain `myslpa.org`.
+- **Hosting:** Netlify, custom domain `myslpa.org`.
 
 ## 7. Open questions
 
